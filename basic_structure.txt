@@ -1,0 +1,26 @@
+Web
+-------
+Home
+    course list by category
+        single course details
+Courses
+    single course
+Cart(all cart course)
+    Single course
+About
+Login
+Register
+Contact Us
+
+
+Admin panel
+----------------
+Courses
+    Single Course
+teachers 
+    create teachers
+About
+    create about
+Students
+Contact Us
+    create 

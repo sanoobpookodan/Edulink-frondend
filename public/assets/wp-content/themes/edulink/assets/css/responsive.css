@@ -1,0 +1,64 @@
+/* Responsive Design */
+
+
+@media only screen and (max-width:1600px) { 
+	
+
+}
+
+@media only screen and (max-width:1400px) { 
+	
+
+}
+
+@media only screen and (max-width:1366px) { 
+
+		
+}
+
+
+@media only screen and (max-width:1199px) {
+	.about_btn {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+}
+
+@media only screen and (max-width:1024px) { 
+
+}
+
+@media only screen and (max-width: 991px){
+    .hslider_nav,
+    .slider_badges{
+        display: none;
+
+    }
+	.about_btn {
+		display: none;
+	}	
+	
+}
+
+@media only screen and (max-width: 767px){
+    .main-header .blue_btn{
+		display: none;
+	}
+	.hslider-item h2{
+        font-size: 40px;
+    }
+    .sc-arrow{
+        margin: 0 15px;
+    }
+	.about_btn{
+		display: none;
+	}
+	
+}
+@media only screen and (max-width: 667px){
+
+}
+@media only screen and (max-width: 575px){
+
+}

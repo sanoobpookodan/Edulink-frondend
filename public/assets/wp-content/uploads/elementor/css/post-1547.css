@@ -1,0 +1,227 @@
+.elementor-1547 .elementor-element.elementor-element-5df76a2 {
+  --display: flex;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-92d6953 {
+  --display: flex;
+  --padding-top: 100px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547
+  .elementor-element.elementor-element-0608781
+  > .elementor-widget-container {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-85a0fc8 {
+  --display: grid;
+  --e-con-grid-template-columns: repeat(4, 1fr);
+  --e-con-grid-template-rows: repeat(2, 1fr);
+  --gap: 24px 24px;
+  --row-gap: 24px;
+  --column-gap: 24px;
+  --grid-auto-flow: row;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-8d98b96 {
+  --display: grid;
+  --e-con-grid-template-columns: repeat(2, 1fr);
+  --e-con-grid-template-rows: repeat(1, 1fr);
+  --gap: 0px 24px;
+  --row-gap: 0px;
+  --column-gap: 24px;
+  --grid-auto-flow: row;
+  --align-items: center;
+  --padding-top: 100px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-bd62ca8 {
+  --display: flex;
+  --padding-top: 100px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-6ccce37 {
+  --display: flex;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-842b219 {
+  --display: flex;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547
+  .elementor-element.elementor-element-5d82288
+  > .elementor-widget-container {
+  background-color: var(--e-global-color-48a0930);
+  padding: 100px 0px 100px 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-ad3e757 {
+  --display: flex;
+  --padding-top: 100px;
+  --padding-bottom: 100px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-bddb911 {
+  --display: flex;
+  --padding-top: 0px;
+  --padding-bottom: 100px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-5776c62 {
+  --display: flex;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-ef6b669 {
+  --display: grid;
+  --e-con-grid-template-columns: repeat(4, 1fr);
+  --e-con-grid-template-rows: repeat(1, 1fr);
+  --gap: 24px 24px;
+  --row-gap: 24px;
+  --column-gap: 24px;
+  --grid-auto-flow: row;
+}
+.elementor-1547 .elementor-element.elementor-element-a824e0f {
+  --display: grid;
+  --e-con-grid-template-columns: repeat(2, 1fr);
+  --e-con-grid-template-rows: repeat(1, 1fr);
+  --gap: 24px 24px;
+  --row-gap: 24px;
+  --column-gap: 24px;
+  --grid-auto-flow: row;
+  --padding-top: 100px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+.elementor-1547 .elementor-element.elementor-element-fcd26c2 {
+  --display: flex;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+  --padding-right: 0px;
+}
+@media (max-width: 1366px) and (min-width: 768px) {
+  .elementor-1547 .elementor-element.elementor-element-92d6953 {
+    --content-width: 1140px;
+  }
+  .elementor-1547 .elementor-element.elementor-element-8d98b96 {
+    --content-width: 1140px;
+  }
+  .elementor-1547 .elementor-element.elementor-element-5776c62 {
+    --content-width: 1140px;
+  }
+  .elementor-1547 .elementor-element.elementor-element-a824e0f {
+    --content-width: 1140px;
+  }
+}
+@media (max-width: 1366px) {
+  .elementor-1547 .elementor-element.elementor-element-85a0fc8 {
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-8d98b96 {
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-ef6b669 {
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-a824e0f {
+    --grid-auto-flow: row;
+  }
+}
+@media (max-width: 1024px) {
+  .elementor-1547 .elementor-element.elementor-element-92d6953 {
+    --padding-top: 100px;
+    --padding-bottom: 0px;
+    --padding-left: 30px;
+    --padding-right: 30px;
+  }
+  .elementor-1547 .elementor-element.elementor-element-85a0fc8 {
+    --e-con-grid-template-columns: repeat(2, 1fr);
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-8d98b96 {
+    --e-con-grid-template-columns: repeat(1, 1fr);
+    --grid-auto-flow: row;
+    --padding-top: 100px;
+    --padding-bottom: 0px;
+    --padding-left: 30px;
+    --padding-right: 30px;
+  }
+  .elementor-1547
+    .elementor-element.elementor-element-d7e25b0
+    > .elementor-widget-container {
+    padding: 40px 0px 0px 0px;
+  }
+  .elementor-1547 .elementor-element.elementor-element-5776c62 {
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --padding-left: 30px;
+    --padding-right: 30px;
+  }
+  .elementor-1547 .elementor-element.elementor-element-ef6b669 {
+    --e-con-grid-template-columns: repeat(2, 1fr);
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-a824e0f {
+    --e-con-grid-template-columns: repeat(1, 1fr);
+    --grid-auto-flow: row;
+    --padding-top: 100px;
+    --padding-bottom: 0px;
+    --padding-left: 30px;
+    --padding-right: 30px;
+  }
+}
+@media (max-width: 880px) {
+  .elementor-1547 .elementor-element.elementor-element-85a0fc8 {
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-8d98b96 {
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-ef6b669 {
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-a824e0f {
+    --grid-auto-flow: row;
+  }
+}
+@media (max-width: 767px) {
+  .elementor-1547 .elementor-element.elementor-element-85a0fc8 {
+    --e-con-grid-template-columns: repeat(1, 1fr);
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-8d98b96 {
+    --e-con-grid-template-columns: repeat(1, 1fr);
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-ef6b669 {
+    --e-con-grid-template-columns: repeat(1, 1fr);
+    --grid-auto-flow: row;
+  }
+  .elementor-1547 .elementor-element.elementor-element-a824e0f {
+    --e-con-grid-template-columns: repeat(1, 1fr);
+    --grid-auto-flow: row;
+  }
+}
