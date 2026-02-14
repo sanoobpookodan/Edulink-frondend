@@ -1,5 +1,5 @@
 // placeholder middleware
-export default function middleware(req: Request) {
+export default function middleware(req) {
   // implement middleware logic
   return;
 }

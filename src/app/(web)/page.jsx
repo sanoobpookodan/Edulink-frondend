@@ -1,6 +1,13 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function HomePage() {
+  useEffect(() => {
+    // if ("scrollRestoration" in window.history) {
+    //   window.history.scrollRestoration = "manual";
+    // }
+  }, []);
   return (
     <div className="page-builder-template">
       {/* ================= HERO SLIDER ================= */}
@@ -595,8 +602,8 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div class="col-12 text-center mt-4">
-            <a href="index.html#" class="border_btn">
+          <div className="col-12 text-center mt-4">
+            <a href="index.html#" className="border_btn">
               View All Posts
             </a>
           </div>
