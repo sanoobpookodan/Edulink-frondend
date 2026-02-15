@@ -165,6 +165,8 @@ const Footer = () => {
       </footer>
 
       {/* Scripts */}
+      {/* <Script src="/assets/js/tutor.js" strategy="afterInteractive" /> */}
+
       {/* jQuery FIRST */}
       <Script src="/assets/js/jquery.min.js" strategy="beforeInteractive" />
       {/* Bootstrap */}
@@ -195,6 +197,7 @@ const Footer = () => {
       />
       <Script src="/assets/js/wow.js" strategy="afterInteractive" />
       <Script src="/assets/js/slick.js" strategy="afterInteractive" />
+      {/* <Script src="/assets/js/tutor-front.js" strategy="afterInteractive" /> */}
       <Script src="/assets/js/scroll-top.js" strategy="afterInteractive" />
       {/* Custome Script */}
       <Script src="/assets/js/scripts.js" strategy="afterInteractive" />

@@ -3,11 +3,6 @@
 import { useEffect } from "react";
 
 export default function HomePage() {
-  useEffect(() => {
-    // if ("scrollRestoration" in window.history) {
-    //   window.history.scrollRestoration = "manual";
-    // }
-  }, []);
   return (
     <div className="page-builder-template">
       {/* ================= HERO SLIDER ================= */}

@@ -501,4 +501,19 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   padding: 100px 0px 100px 0px;
 }
 
-/*# sourceURL=global-styles-inline-css */
+.accordion-button:not(.collapsed) {
+  color: inherit;
+  background-color: inherit;
+  box-shadow: inherit;
+}
+.accordion-button:focus {
+  box-shadow: inherit;
+}
+.accordion-item:not(:first-of-type) {
+  border: var(--bs-accordion-border-width) solid
+    var(--bs-accordion-border-color);
+}
+.cdin_image {
+  text-align: center;
+  width: 210px;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 (() => {
   var t = {
     24262: function (t, e, r) {
@@ -573,15 +572,17 @@ import React from "react";
               n.val(e.id);
               r.find(".delete-btn").show();
               t("#save_tutor_option").prop("disabled", false);
-              document.querySelector(".tutor-thumbnail-uploader").dispatchEvent(
-                new CustomEvent("tutor_settings_media_selected", {
-                  detail: {
-                    wrapper: r,
-                    settingsName: n.attr("name").replace(/.*\[(.*?)\]/, "$1"),
-                    attachment: e,
-                  },
-                }),
-              );
+              document
+                .querySelector(".tutor-thumbnail-uploader")
+                .dispatchEvent(
+                  new CustomEvent("tutor_settings_media_selected", {
+                    detail: {
+                      wrapper: r,
+                      settingsName: n.attr("name").replace(/.*\[(.*?)\]/, "$1"),
+                      attachment: e,
+                    },
+                  }),
+                );
             });
             a.open();
           },

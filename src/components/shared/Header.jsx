@@ -1,8 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Header() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
   return (
     <>
       {/* Preloader */}
@@ -42,6 +48,7 @@ export default function Header() {
 
       <div className="offcanvas__overlay"></div>
       {/* <!-- Offcanvas Area End --> */}
+
       <header className="header position-absolute z-3 start-0 top-0 w-100">
         <div className="main-header">
           <div className="container-fluid">
@@ -203,7 +210,6 @@ export default function Header() {
                   <a
                     className="search_btn align-self-center"
                     data-menu="#popup_searchbox"
-                    href="index.html#"
                   >
                     <i className="ph ph-magnifying-glass"></i>
                   </a>
@@ -231,7 +237,7 @@ export default function Header() {
       {/* <!-- Start Popup Search Box --> */}
       <div id="popup_searchbox" className="popup_searchbox_wrapper">
         <div className="searchbox_drawer position-relative">
-          <a href="index.html#" className="popup_close">
+          <a href="#" className="popup_close">
             <i className="bx bx-x"></i>
           </a>
           <div className="popup_searchform text-center">
