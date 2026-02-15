@@ -1,5 +1,6 @@
-// import Sidebar from "@/components/shared/Sidebar";
-
+import Banner from "@/components/shared/Banner";
+import Header from "@/components/shared/Header";
+import Footer from "@/components/shared/Footer";
 export default function AdminLayout({ children }) {
   return (
     <html lang="en">

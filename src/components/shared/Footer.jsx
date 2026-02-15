@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="container footer-top">
           <div className="row g-4">
             {/* About */}
-            <div className="col-xl-3 col-md-6 footer-widget">
+            <div className="col-xl-3 col-md-6 footer-widget wow fadeInUp">
               <div className="about-footer">
                 <div className="footer-logo mb-3">
                   <a href="/">
@@ -59,7 +59,10 @@ const Footer = () => {
             </div>
 
             {/* Company */}
-            <div className="col-xl-3 col-md-6 footer-widget">
+            <div
+              className="col-xl-3 col-md-6 footer-widget wow fadeInUp"
+              data-wow-delay=".1s"
+            >
               <h3 className="footer-title">Company</h3>
               <ul className="menu">
                 <li>
@@ -84,7 +87,10 @@ const Footer = () => {
             </div>
 
             {/* Useful Links */}
-            <div className="col-xl-3 col-md-6 footer-widget">
+            <div
+              className="col-xl-3 col-md-6 footer-widget wow fadeInUp"
+              data-wow-delay=".2s"
+            >
               <h3 className="footer-title">Useful Links</h3>
               <ul className="menu">
                 <li>
@@ -109,7 +115,10 @@ const Footer = () => {
             </div>
 
             {/* Contact */}
-            <div className="col-xl-3 col-md-6 footer-widget">
+            <div
+              className="col-xl-3 col-md-6 footer-widget wow fadeInUp"
+              data-wow-delay=".3s"
+            >
               <h3 className="footer-title">Contact Us</h3>
 
               <div className="fot-contact-info">
@@ -138,7 +147,8 @@ const Footer = () => {
 
           <hr className="m-0" />
         </div>
-        {/* <!-- progress-circle --> */}
+
+        {/* Scroll Progress */}
         <div className="progress-wrap">
           <svg
             className="progress-circle svg-content"
@@ -149,11 +159,15 @@ const Footer = () => {
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
           </svg>
         </div>
+
         {/* Copyright */}
         <div className="copyright">
           <div className="container">
             <div className="row">
-              <div className="col-12 text-center">
+              <div
+                className="col-12 text-center wow fadeInUp"
+                data-wow-delay=".3s"
+              >
                 <p>
                   Copyright © {new Date().getFullYear()} Edulink. All Rights
                   Reserved.

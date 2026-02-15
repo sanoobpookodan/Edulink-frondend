@@ -517,3 +517,43 @@ img:is([sizes="auto" i], [sizes^="auto," i]) {
   text-align: center;
   width: 210px;
 }
+#team.team {
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#tutor > .tutor-user-public-profile .photo-area {
+  height: 414px;
+  margin-top: 0;
+  overflow: hidden;
+}
+#tutor > .tutor-wrap.tutor-wrap-parent.tutor-user-public-profile {
+  padding: 0;
+}
+#tutor .tutor-container {
+  max-width: 100% !important;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.tutor-user-public-profile .photo-area .cover-area > div:last-child {
+  background-image: linear-gradient(#0000, #0009);
+  height: 352px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.tutor-user-public-profile .tutor-user-profile-content {
+  float: right;
+  width: calc(100% - 278px);
+  margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}

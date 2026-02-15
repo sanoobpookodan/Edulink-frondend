@@ -482,7 +482,9 @@ export default function HomePage() {
                   </div>
 
                   <div className="teacher-content text-center mt-3">
-                    <h4>James Carter</h4>
+                    <h4 className="tname">
+                      <a href="#">James Carter</a>
+                    </h4>{" "}
                     <p>Web Developer</p>
                   </div>
                 </div>
