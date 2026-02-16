@@ -1,7 +1,5 @@
 import React from "react";
 
-function page() {
+export default function Page() {
   return <div>Admin Page</div>;
 }
-
-export default page;
