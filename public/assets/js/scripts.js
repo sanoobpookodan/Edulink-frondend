@@ -82,10 +82,10 @@ Version      : 1.0
     loop: true,
     slidesPerView: 1,
     grabCursor: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
     effect: "fade", // 'fade', 'cube', 'coverflow', 'flip'
     fadeEffect: {
       crossFade: true,

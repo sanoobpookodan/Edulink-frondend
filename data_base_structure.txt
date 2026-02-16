@@ -1,0 +1,17 @@
+spotlight
+    title
+    description
+about
+    title
+    description
+    image
+categories
+    image
+    title
+testimonials
+    student - select
+    description
+teachers
+    
+blogs
+courses
