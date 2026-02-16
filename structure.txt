@@ -1,0 +1,29 @@
+.
+└── src
+    ├── app
+    │   ├── (web)
+    │   │   ├── about
+    │   │   ├── blogs
+    │   │   ├── contact
+    │   │   ├── courses
+    │   │   ├── instructor-registration
+    │   │   ├── registration
+    │   │   ├── student-registration
+    │   │   └── teachers
+    │   ├── admin
+    │   └── api
+    ├── context
+    ├── features
+    │   ├── auth
+    │   ├── cart
+    │   ├── course
+    │   ├── student
+    │   └── teacher
+    ├── hooks
+    ├── lib
+    ├── services
+    ├── store
+    ├── styles
+    └── types
+
+27 directories

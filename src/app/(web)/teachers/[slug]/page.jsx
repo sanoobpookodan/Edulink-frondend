@@ -1,6 +1,4 @@
-export default function TeacherDetailPage({ params }) {
-  const { slug } = params;
-
+export default async function TeacherDetailPage({ params }) {
   return (
     <div id="tutor">
       <section className="tutor-wrap tutor-wrap-parent tutor-full-width-student-profile tutor-page-wrap tutor-user-public-profile tutor-user-public-profile-pp-rectangle tutor-instructor">

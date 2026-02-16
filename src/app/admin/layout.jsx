@@ -1,15 +1,24 @@
-import Banner from "@/components/shared/Banner";
-import Header from "@/components/shared/Header";
-import Footer from "@/components/shared/Footer";
-export default function AdminLayout({ children }) {
+import { Outfit } from "next/font/google";
+import "./globals.css";
+import "flatpickr/dist/flatpickr.css";
+import { SidebarProvider } from "@/context/SidebarContext";
+import { ThemeProvider } from "@/context/ThemeContext";
+import AdminStructure from "@/layout/AdminStructure";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+});
+
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-      </head>
-      <body>{children}</body>
+      <body className={`${outfit.className} dark:bg-gray-900`}>
+        <ThemeProvider>
+          <SidebarProvider>
+            <AdminStructure>{children}</AdminStructure>
+          </SidebarProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
