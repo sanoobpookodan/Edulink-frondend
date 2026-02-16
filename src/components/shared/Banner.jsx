@@ -38,11 +38,24 @@ export default function Banner() {
         <p>
           <Link href="/">Home</Link>
 
-          {breadcrumbs.map((item) => (
+          {breadcrumbs.map((item, index) => (
             <span key={item.href}>
               {" "}
               <i className="ph ph-caret-right"></i>{" "}
-              <Link href={item.href}>{item.label}</Link>
+              {index != breadcrumbs.length - 1 ? (
+                <Link
+                  onClick={(e) => {
+                    if (index == breadcrumbs.length - 1) {
+                      e.preventDefault();
+                    }
+                  }}
+                  href={item.href}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <span>{item.label}</span>
+              )}
             </span>
           ))}
         </p>
