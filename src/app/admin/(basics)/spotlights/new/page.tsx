@@ -1,3 +1,50 @@
+"use client";
+import { ChevronDownIcon } from "@/icons";
+import ComponentCard from "@/components/common/ComponentCard";
+import Label from "@/components/form/Label";
+import Input from "@/components/form/input/InputField";
+import TextArea from "@/components/form/input/TextArea";
+import Select from "@/components/form/Select";
+import FileInput from "@/components/form/input/FileInput";
+
 export default function CreateSpotlight() {
-  return <div>Create a new Spotlight</div>;
+  return (
+    <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
+      <div className="space-y-6">
+        <ComponentCard title="Create Spotlight">
+          <div className="space-y-6">
+            <div>
+              <Label>Title</Label>
+              <Input type="text" />
+            </div>
+            <div>
+              <Label>Description</Label>
+              <TextArea />
+            </div>
+            <div>
+              <Label>Image</Label>
+              <FileInput />
+            </div>
+            <div>
+              <Label>Status</Label>
+              <div className="relative">
+                <Select
+                  options={[
+                    { value: "active", label: "Active" },
+                    { value: "inactive", label: "Inactive" },
+                  ]}
+                  onChange={() => {}}
+                  className="dark:bg-dark-900"
+                />
+                <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none right-3 top-1/2 dark:text-gray-400">
+                  {/* @ts-ignore */}
+                  <ChevronDownIcon />
+                </span>
+              </div>
+            </div>
+          </div>
+        </ComponentCard>
+      </div>
+    </div>
+  );
 }

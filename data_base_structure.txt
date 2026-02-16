@@ -123,6 +123,7 @@ const students = {
   dateOfBirth: "1995-12-31",
 };
 
-userSchema.virtual("fullName").get(function () {
-  return `${this.firstName} ${this.lastName}`;
-});
+// GET FULLNAME METHOD
+// userSchema.virtual("fullName").get(function () {
+//   return `${this.firstName} ${this.lastName}`;
+// });
