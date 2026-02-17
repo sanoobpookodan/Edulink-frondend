@@ -4,6 +4,7 @@ import ComponentCard from "@/components/common/ComponentCard";
 import Label from "@/components/form/Label";
 import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
+import Button from "@/components/ui/button/Button";
 
 export default function CreateTestimonial() {
   return (
@@ -27,6 +28,9 @@ export default function CreateTestimonial() {
             <div>
               <Label>Description</Label>
               <TextArea />
+            </div>
+            <div className="flex items-center gap-5">
+              <Button>Submit</Button>
             </div>
           </div>
         </ComponentCard>

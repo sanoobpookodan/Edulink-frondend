@@ -7,6 +7,7 @@ import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
 import FileInput from "@/components/form/input/FileInput";
 import { STATUS_OPTIONS } from "@/constants/selectOptions";
+import Button from "@/components/ui/button/Button";
 
 export default function CreateSpotlight() {
   return (
@@ -40,6 +41,9 @@ export default function CreateSpotlight() {
                   <ChevronDownIcon />
                 </span>
               </div>
+            </div>
+            <div className="flex items-center gap-5">
+              <Button>Submit</Button>
             </div>
           </div>
         </ComponentCard>

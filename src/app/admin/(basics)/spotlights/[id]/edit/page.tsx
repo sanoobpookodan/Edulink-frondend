@@ -6,6 +6,7 @@ import Input from "@/components/form/input/InputField";
 import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
 import FileInput from "@/components/form/input/FileInput";
+import Button from "@/components/ui/button/Button";
 
 export default function EditSpotlight() {
   return (
@@ -41,6 +42,9 @@ export default function EditSpotlight() {
                   <ChevronDownIcon />
                 </span>
               </div>
+            </div>
+            <div className="flex items-center gap-5">
+              <Button>Submit</Button>
             </div>
           </div>
         </ComponentCard>
