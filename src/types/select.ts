@@ -1,8 +1,10 @@
 export type PaymentMethod = "card" | "upi" | "cash";
+export type PublishStatus = "draft" | "published" | "archived";
+export type PublishStatusLabel = "Draft" | "Published" | "Archived";
 
-export type SelectOption<T = string> = {
-  value: T;
-  label: string;
+export type SelectOption<S = string, L = string> = {
+  value: S;
+  label: L;
 };
 
 export type PaymentOption = {

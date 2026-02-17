@@ -6,15 +6,15 @@ import Input from "@/components/form/input/InputField";
 import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
 import FileInput from "@/components/form/input/FileInput";
-import { STATUS_OPTIONS } from "@/constants/selectOptions";
+import { STATUS_OPTIONS } from "@/constants";
 import Button from "@/components/ui/button/Button";
 
-export default function CreateAbout() {
+export default function CreateSpotlight() {
   return (
     <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-      <div className="space-y-5">
-        <ComponentCard title="Create About">
-          <div className="space-y-5">
+      <div className="space-y-6">
+        <ComponentCard title="Create Spotlight">
+          <div className="space-y-6">
             <div>
               <Label>Title</Label>
               <Input type="text" />

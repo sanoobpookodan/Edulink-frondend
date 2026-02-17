@@ -182,7 +182,7 @@ const Footer = () => {
       {/* <Script src="/assets/js/tutor.js" strategy="afterInteractive" /> */}
 
       {/* jQuery FIRST */}
-      <Script src="/assets/js/jquery.min.js" strategy="beforeInteractive" />
+      <Script src="/assets/js/jquery.min.js" strategy="afterInteractive" />
       {/* Bootstrap */}
       <Script
         src="/assets/js/bootstrap.bundle.js"
