@@ -1,5 +1,4 @@
 import React from "react";
-import Banner from "@/components/shared/Banner";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 // styles
