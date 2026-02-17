@@ -6,6 +6,7 @@ import Input from "@/components/form/input/InputField";
 import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
 import FileInput from "@/components/form/input/FileInput";
+import { STATUS_OPTIONS } from "@/constants/selectOptions";
 
 export default function CreateAbout() {
   return (
@@ -29,12 +30,10 @@ export default function CreateAbout() {
               <Label>Status</Label>
               <div className="relative">
                 <Select
-                  options={[
-                    { value: "active", label: "Active" },
-                    { value: "inactive", label: "Inactive" },
-                  ]}
+                  options={STATUS_OPTIONS}
                   onChange={() => {}}
                   className="dark:bg-dark-900"
+                  defaultValue={STATUS_OPTIONS[0].value}
                 />
                 <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none right-3 top-1/2 dark:text-gray-400">
                   {/* @ts-ignore */}
