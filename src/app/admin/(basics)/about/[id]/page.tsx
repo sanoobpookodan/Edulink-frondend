@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "About Details",
+};
 interface ViewAboutProps {
   params: { id: string };
 }

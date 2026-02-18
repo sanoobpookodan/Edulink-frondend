@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Blog Details",
+};
 import Banner from "@/components/shared/Banner";
 
 export default function BlogDetailPage({ params }) {

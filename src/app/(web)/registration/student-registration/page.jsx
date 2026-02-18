@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Student Registration",
+};
 import Banner from "@/components/shared/Banner";
 
 export default function StudentRegistrationPage() {

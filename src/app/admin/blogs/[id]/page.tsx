@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Blog Details",
+};
 interface ViewBlogProps {
   params: { id: string };
 }

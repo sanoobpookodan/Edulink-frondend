@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Blog Category Details",
+};
 interface ViewCategoryProps {
   params: { id: string };
 }

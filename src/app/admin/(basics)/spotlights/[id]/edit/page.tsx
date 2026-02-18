@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+  title: "Edit Spotlight",
+};
+("use client");
 
 import { useState } from "react";
 import ComponentCard from "@/components/common/ComponentCard";
@@ -8,6 +11,7 @@ import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
 import FileInput from "@/components/form/input/FileInput";
 import { STATUS_OPTIONS } from "@/constants";
+import { slugify } from "@/lib/form";
 import Button from "@/components/ui/button/Button";
 import Form from "@/components/form/Form";
 import { imageTypes } from "@/constants/fileTypes";
@@ -31,7 +35,11 @@ export default function EditSpotlight() {
         alert("Please select a valid image file (jpg, png, jpeg)");
       }
     } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
+      if (name === "title") {
+        setForm((prev) => ({ ...prev, title: value, slug: slugify(value) }));
+      } else {
+        setForm((prev) => ({ ...prev, [name]: value }));
+      }
     }
   };
 

@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Contact",
+};
 import Banner from "@/components/shared/Banner";
 
 export default function ContactPage() {

@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+  title: "Create Blog Category",
+};
+("use client");
 import { ChevronDownIcon } from "@/icons";
 import ComponentCard from "@/components/common/ComponentCard";
 import Label from "@/components/form/Label";

@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Instructor Details",
+};
 export default async function TeacherDetailPage({ params }) {
   return (
     <div id="tutor">

@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Blogs",
+};
 // Blogs admin page
 export default function BlogsList() {
   return (

@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Spotlight Details",
+};
 interface ViewSpotlightProps {
   params: { id: string };
 }

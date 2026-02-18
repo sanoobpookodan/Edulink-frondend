@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Courses",
+};
 import Banner from "@/components/shared/Banner";
 import Link from "next/link";
 

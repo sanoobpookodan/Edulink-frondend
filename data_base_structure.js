@@ -42,7 +42,7 @@ const course = {
   image: "/assets/images/course/course.jpg",
   status: "active", //enum: ["active", "inactive"]
   content: "Course content goes here...", //react-quill
-  categories: category_id,
+  category: category_id,
   instructor: instructor_id,
   date_updated: "2024-10-01", //date of last update
   curriculum: [

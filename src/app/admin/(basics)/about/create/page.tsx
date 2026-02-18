@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+  title: "Create About",
+};
+("use client");
 
 import { useState } from "react";
 import ComponentCard from "@/components/common/ComponentCard";
@@ -8,6 +11,7 @@ import TextArea from "@/components/form/input/TextArea";
 import Select from "@/components/form/Select";
 import FileInput from "@/components/form/input/FileInput";
 import { STATUS_OPTIONS, aboutInitial } from "@/constants";
+import { slugify } from "@/lib/form";
 import Button from "@/components/ui/button/Button";
 import Form from "@/components/form/Form";
 import { imageTypes } from "@/constants/fileTypes";
@@ -24,7 +28,11 @@ export default function CreateAbout() {
         alert("Please select a valid image file (jpg, png, jpeg)");
       }
     } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
+      if (name === "title") {
+        setForm((prev) => ({ ...prev, title: value, slug: slugify(value) }));
+      } else {
+        setForm((prev) => ({ ...prev, [name]: value }));
+      }
     }
   };
 
@@ -37,7 +45,7 @@ export default function CreateAbout() {
   return (
     <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
       <ComponentCard title="Create About">
-        <Form onSubmit={handleSubmit} className="space-y-5">
+        <Form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Label htmlFor="title">Title</Label>
             <Input

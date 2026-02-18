@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Teacher Details",
+};
 interface ViewTeacherProps {
   params: { id: string };
 }

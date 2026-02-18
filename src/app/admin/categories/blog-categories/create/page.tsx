@@ -1,10 +1,14 @@
-"use client";
+export const metadata = {
+  title: "Create Blog Category",
+};
+("use client");
 
 import { useState } from "react";
 import ComponentCard from "@/components/common/ComponentCard";
 import Label from "@/components/form/Label";
 import Input from "@/components/form/input/InputField";
 import { blogCategoryInitial } from "@/constants";
+import { slugify } from "@/lib/form";
 import Button from "@/components/ui/button/Button";
 import Form from "@/components/form/Form";
 
@@ -13,7 +17,11 @@ export default function CreateBlogCategory() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    if (name === "name") {
+      setForm((prev) => ({ ...prev, name: value, slug: slugify(value) }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {

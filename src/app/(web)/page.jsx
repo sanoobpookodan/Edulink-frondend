@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+  title: "Home",
+};
+("use client");
 
 import { useEffect } from "react";
 

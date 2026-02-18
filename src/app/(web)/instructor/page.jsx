@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Instructors",
+};
 import Banner from "@/components/shared/Banner";
 
 export default function TeachersPage() {

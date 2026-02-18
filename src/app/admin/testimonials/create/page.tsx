@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+  title: "Create Testimonial",
+};
+("use client");
 
 import { useState } from "react";
 import ComponentCard from "@/components/common/ComponentCard";

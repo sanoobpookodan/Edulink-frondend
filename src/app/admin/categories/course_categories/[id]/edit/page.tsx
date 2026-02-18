@@ -1,4 +1,7 @@
-"use client";
+export const metadata = {
+  title: "Edit Category",
+};
+("use client");
 
 import { useState } from "react";
 import ComponentCard from "@/components/common/ComponentCard";
@@ -6,6 +9,7 @@ import Label from "@/components/form/Label";
 import Input from "@/components/form/input/InputField";
 import FileInput from "@/components/form/input/FileInput";
 import { courseCategoryInitial } from "@/constants";
+import { slugify } from "@/lib/form";
 import Button from "@/components/ui/button/Button";
 import Form from "@/components/form/Form";
 import { imageTypes } from "@/constants/fileTypes";
@@ -22,7 +26,11 @@ export default function EditCourseCategory() {
         alert("Please select a valid image file (jpg, png, jpeg)");
       }
     } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
+      if (name === "name") {
+        setForm((prev) => ({ ...prev, name: value, slug: slugify(value) }));
+      } else {
+        setForm((prev) => ({ ...prev, [name]: value }));
+      }
     }
   };
 
