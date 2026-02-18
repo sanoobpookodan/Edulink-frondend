@@ -1,14 +1,21 @@
-import { Blog } from "@/types/state";
+import type { Spotlight, Blog } from "@/types/state";
+
+const spotlightInitial: Spotlight = {
+  title: "",
+  description: "",
+  image: "",
+  status: "active",
+};
 
 const blogInitial: Blog = {
   title: "",
   slug: "",
   description: "",
   image: "",
-  categories: "",
+  categories: [],
   tags: [],
   status: "published",
   content: "",
 };
 
-export { blogInitial };
+export { blogInitial, spotlightInitial };

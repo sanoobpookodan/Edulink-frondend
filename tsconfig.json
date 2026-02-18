@@ -31,9 +31,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx",
-    "src/middleware.js",
-    "src/app/admin/about.js",
-    "src/components/form/rich-text/MenuBar.js"
+    "src/middleware.js"
   ],
   "exclude": ["node_modules"]
 }

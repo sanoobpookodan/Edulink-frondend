@@ -79,7 +79,11 @@ export default function BlogCreatePage() {
 
           <div className="relative">
             <Label>Categories</Label>
-            <MultiSelect name="categories" onChange={handleSelectedChange} />
+            <MultiSelect
+              name="categories"
+              onChange={handleSelectedChange}
+              options={BLOG_STATUS_OPTIONS}
+            />
           </div>
 
           <div className="relative">
@@ -103,14 +107,20 @@ export default function BlogCreatePage() {
           </div>
           <div>
             <Label htmlFor="status">Status</Label>
-            <Select
-              id="status"
-              options={BLOG_STATUS_OPTIONS}
-              onChange={handleChange}
-              name="status"
-              value={form.status}
-              placeholder="Select status"
-            />
+            <div className="relative">
+              <Select
+                id="status"
+                options={BLOG_STATUS_OPTIONS}
+                onChange={handleChange}
+                name="status"
+                value={form.status}
+                placeholder="Select status"
+              />
+              <span className="absolute text-gray-500 -translate-y-1/2 pointer-events-none right-3 top-1/2 dark:text-gray-400">
+                {/* @ts-ignore */}
+                <ChevronDownIcon />
+              </span>
+            </div>
           </div>
           <div className="flex items-center gap-5">
             <Button>Create</Button>
