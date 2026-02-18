@@ -1,12 +1,12 @@
 import { PublishStatus } from "./";
 
-export type Blog = {
+export interface Blog {
   title: string;
   slug: string;
   description: string;
   image?: File | string;
-  categories: string;
+  categories: string[];
   tags: string[];
   status: PublishStatus;
   content: string;
-};
+}

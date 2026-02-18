@@ -32,7 +32,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/middleware.js",
-    "src/app/admin/about.js"
+    "src/app/admin/about.js",
+    "src/components/form/rich-text/MenuBar.js"
   ],
   "exclude": ["node_modules"]
 }

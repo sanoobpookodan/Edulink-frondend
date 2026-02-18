@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import ComponentCard from "@/components/common/ComponentCard";
 import Label from "@/components/form/Label";
 import Select from "@/components/form/Select";
@@ -8,11 +7,13 @@ import TextArea from "@/components/form/input/TextArea";
 import Button from "@/components/ui/button/Button";
 import { BLOG_STATUS_OPTIONS, blogInitial } from "@/constants";
 
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css";
 import Input from "@/components/form/input/InputField";
 import FileInput from "@/components/form/input/FileInput";
 import { imageTypes } from "@/constants/fileTypes";
+import RichTextEditor from "@/components/form/input/RichTextEditor";
+import Form from "@/components/form/Form";
+import { ChevronDownIcon } from "@/icons";
+import MultiSelect from "@/components/form/MultiSelect";
 
 export default function BlogCreatePage() {
   const [form, setForm] = useState(blogInitial);
@@ -30,15 +31,8 @@ export default function BlogCreatePage() {
     }
   };
 
-  const handleTagsChange = (e) => {
-    setForm((prev) => ({
-      ...prev,
-      tags: e.target.value.split(",").map((tag) => tag.trim()),
-    }));
-  };
-
-  const handleSelectedChange = (value) => {
-    setForm((prev) => ({ ...prev, status: value }));
+  const handleSelectedChange = (name: string, values: string[]) => {
+    setForm((prev) => ({ ...prev, [name]: values }));
   };
 
   const handleSubmit = (e) => {
@@ -49,67 +43,80 @@ export default function BlogCreatePage() {
 
   return (
     <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-      <div className="space-y-6">
-        <ComponentCard title="Create Blog">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <div>
-              <Label>Title</Label>
-              <Input name="title" value={form.title} onChange={handleChange} />
-            </div>
-            <div>
-              <Label>Slug</Label>
-              <Input name="slug" value={form.slug} onChange={handleChange} />
-            </div>
-            <div>
-              <Label>Description</Label>
-              <TextArea
-                name="description"
-                value={form.description}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label>Image</Label>
-              <FileInput
-                name="image"
-                value={form.image}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label>Categories</Label>
-              <Input
-                name="categories"
-                value={form.categories}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label>Status</Label>
-              <Select
-                options={BLOG_STATUS_OPTIONS}
-                onChange={handleSelectedChange}
-                defaultValue={form.status}
-              />
-            </div>
-            <div>
-              <Label>Tags (comma separated)</Label>
-              <Input
-                name="tags"
-                value={form.tags.join(", ")}
-                onChange={handleTagsChange}
-              />
-            </div>
-            <div>
-              <Label>Content</Label>
-              {/* <ReactQuill value={blog.content} onChange={handleContentChange} /> */}
-            </div>
-            <div className="flex items-center gap-5">
-              <Button>Create</Button>
-            </div>
-          </form>
-        </ComponentCard>
-      </div>
+      <ComponentCard title="Create Blog">
+        <Form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <Label htmlFor="title">Title</Label>
+            <Input
+              id="title"
+              name="title"
+              value={form.title}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Label htmlFor="slug">Slug</Label>
+            <Input
+              id="slug"
+              name="slug"
+              value={form.slug}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Label htmlFor="description">Description</Label>
+            <TextArea
+              id="description"
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <Label htmlFor="image">Image</Label>
+            <FileInput id="image" name="image" onChange={handleChange} />
+          </div>
+
+          <div className="relative">
+            <Label>Categories</Label>
+            <MultiSelect name="categories" onChange={handleSelectedChange} />
+          </div>
+
+          <div className="relative">
+            <Label>Tags</Label>
+            <MultiSelect
+              name="tags"
+              onChange={handleSelectedChange}
+              placeholder="Select tags"
+            />
+          </div>
+
+          <div>
+            <Label htmlFor="content">Content</Label>
+            <RichTextEditor
+              id="content"
+              name={"content"}
+              onChange={(value) =>
+                setForm((prev) => ({ ...prev, content: value }))
+              }
+            />
+          </div>
+          <div>
+            <Label htmlFor="status">Status</Label>
+            <Select
+              id="status"
+              options={BLOG_STATUS_OPTIONS}
+              onChange={handleChange}
+              name="status"
+              value={form.status}
+              placeholder="Select status"
+            />
+          </div>
+          <div className="flex items-center gap-5">
+            <Button>Create</Button>
+          </div>
+        </Form>
+      </ComponentCard>
     </div>
   );
 }

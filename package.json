@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.11",
+    "@tiptap/extension-text-style": "^3.19.0",
+    "@tiptap/react": "^3.19.0",
+    "@tiptap/starter-kit": "^3.19.0",
     "autoprefixer": "^10.4.24",
     "flatpickr": "^4.6.13",
     "next": "16.1.6",
@@ -17,7 +20,7 @@
     "react-dom": "19.2.3",
     "react-dropzone": "^15.0.0",
     "react-flatpickr": "^4.0.11",
-    "react-quill": "^2.0.0",
+    "sass": "^1.97.3",
     "swiper": "^12.1.1",
     "tailwind-merge": "^3.4.1"
   },
