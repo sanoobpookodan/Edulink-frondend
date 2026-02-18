@@ -1,3 +1,26 @@
+import type { Testimonial } from "@/types/state";
+const testimonialInitial: Testimonial = {
+  student: "",
+  description: "",
+};
+import type { BlogCategory } from "@/types/state";
+const blogCategoryInitial: BlogCategory = {
+  name: "",
+  slug: "",
+};
+import type { CourseCategory } from "@/types/state";
+const courseCategoryInitial: CourseCategory = {
+  name: "",
+  slug: "",
+  image: "",
+};
+import type { About } from "@/types/state";
+const aboutInitial: About = {
+  title: "",
+  description: "",
+  image: "",
+  status: "active",
+};
 import type { Spotlight, Blog } from "@/types/state";
 
 const spotlightInitial: Spotlight = {
@@ -18,4 +41,11 @@ const blogInitial: Blog = {
   content: "",
 };
 
-export { blogInitial, spotlightInitial };
+export {
+  blogInitial,
+  spotlightInitial,
+  aboutInitial,
+  courseCategoryInitial,
+  blogCategoryInitial,
+  testimonialInitial,
+};
