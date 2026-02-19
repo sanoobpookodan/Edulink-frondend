@@ -1,7 +1,7 @@
-export const metadata = {
-  title: "Course Details",
-};
-("use client");
+// export const metadata = {
+//   title: "Course Details",
+// };
+"use client";
 import { useState } from "react";
 import Banner from "@/components/shared/Banner";
 import Link from "next/link";

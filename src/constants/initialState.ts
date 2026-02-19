@@ -55,7 +55,6 @@ const courseInitial: Course = {
   description: "",
   image: "",
   duration: "",
-  status: "active",
   content: "",
   category: "",
   instructor: "",

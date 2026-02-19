@@ -102,7 +102,6 @@ export default function EditCourse({ params }: EditCourseProps) {
               value={form.content}
               onChange={handleChange}
             />
-            {/* Replace Input with a ReactQuill component for rich text */}
           </div>
           <div>
             <Label htmlFor="category">Category</Label>
@@ -112,7 +111,6 @@ export default function EditCourse({ params }: EditCourseProps) {
               value={form.category}
               onChange={handleChange}
             />
-            {/* Replace with a select if you have categories */}
           </div>
           <div>
             <Label htmlFor="instructor">Instructor</Label>
@@ -122,7 +120,6 @@ export default function EditCourse({ params }: EditCourseProps) {
               value={form.instructor}
               onChange={handleChange}
             />
-            {/* Replace with a select if you have instructors */}
           </div>
           <div className="flex items-center gap-5">
             <Button>Update</Button>

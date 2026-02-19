@@ -1,3 +1,5 @@
+import { ActiveStatus, PublishStatus } from ".";
+
 export interface Testimonial {
   student: string;
   description: string;
@@ -15,9 +17,8 @@ export interface About {
   title: string;
   description: string;
   image?: File | string;
-  status: "active" | "inactive";
+  status: ActiveStatus;
 }
-import { ActiveStatus, PublishStatus } from ".";
 
 export interface Spotlight {
   title: string;
@@ -37,13 +38,23 @@ export interface Blog {
   content: string;
 }
 
+// course interface
+export interface Lesson {
+  title: string;
+  duration: string;
+}
+
+export interface CurriculumSection {
+  title: string;
+  lessons: Lesson[];
+}
+
 export interface Course {
   title: string;
   slug: string;
   description: string;
-  image?: File | string;
   duration: string;
-  status: "active" | "inactive";
+  image: string | File;
   content: string;
   category: string;
   instructor: string;

@@ -9,16 +9,24 @@ const nextConfig: NextConfig = {
     });
     return config;
   },
-    
-    turbopack: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  // svg
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
       },
     },
-  
+  },
+  // image domains
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
