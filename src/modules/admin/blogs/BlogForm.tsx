@@ -60,6 +60,7 @@ export default function BlogForm({
                     name="image"
                     onChange={handleChange}
                     placeholder="Select an image"
+                    file={form.image}
                   />
                 </div>
 

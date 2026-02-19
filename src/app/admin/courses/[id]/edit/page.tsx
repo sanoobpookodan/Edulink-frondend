@@ -74,7 +74,12 @@ export default function EditCourse({ params }: EditCourseProps) {
           </div>
           <div>
             <Label htmlFor="image">Image</Label>
-            <FileInput id="image" name="image" onChange={handleChange} />
+            <FileInput
+              id="image"
+              name="image"
+              onChange={handleChange}
+              file={form.image}
+            />
           </div>
           <div>
             <Label htmlFor="status">Status</Label>

@@ -49,6 +49,7 @@ export default function CourseCategoryForm({
                     name="image"
                     onChange={handleChange}
                     placeholder="Select an image"
+                    file={form.image}
                   />
                 </div>
                 <div className="flex items-center gap-5">

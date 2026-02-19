@@ -56,7 +56,7 @@ const FileInput: FC<FileInputProps> = ({
           alt="Preview"
           width={200}
           height={200}
-          style={{ objectFit: "cover" }}
+          className="my-4  object-contain"
         />
       )}
     </div>
