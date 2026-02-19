@@ -1,6 +1,7 @@
+import Button from "@/components/ui/button/Button";
 import { imageExtensions } from "@/constants";
 import Image from "next/image";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState, useRef } from "react";
 
 interface FileInputProps {
   name?: string;
@@ -22,6 +23,7 @@ const FileInput: FC<FileInputProps> = ({
   onChange,
 }) => {
   const [preview, setPreview] = useState<string | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     if (!file) return;
@@ -39,9 +41,23 @@ const FileInput: FC<FileInputProps> = ({
     };
   }, [file]);
 
+  const removeImage = () => {
+    setPreview(null);
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
+    onChange?.({
+      target: {
+        name,
+        value: null,
+      },
+    } as React.ChangeEvent<HTMLInputElement>);
+  };
+
   return (
     <div>
       <input
+        ref={inputRef}
         id={id}
         type="file"
         name={name}
@@ -51,13 +67,18 @@ const FileInput: FC<FileInputProps> = ({
         onChange={onChange}
       />
       {preview && (
-        <Image
-          src={preview}
-          alt="Preview"
-          width={200}
-          height={200}
-          className="my-4  object-contain"
-        />
+        <div className="flex flex-row items-end gap-4 my-4">
+          <Image
+            src={preview}
+            alt="Preview"
+            width={200}
+            height={200}
+            className="object-contain"
+          />
+          <Button onClick={removeImage} variant="outline" size="sm">
+            Remove
+          </Button>
+        </div>
       )}
     </div>
   );
