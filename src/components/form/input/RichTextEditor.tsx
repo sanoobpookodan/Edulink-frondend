@@ -1,9 +1,7 @@
 import "@/styles/rich-text.scss";
-
 import { TextStyleKit } from "@tiptap/extension-text-style";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import React from "react";
 import { MenuBar } from "../rich-text/MenuBar";
 
 const extensions = [TextStyleKit, StarterKit];
@@ -26,7 +24,7 @@ export default function RichTextEditor({
   const editor = useEditor({
     extensions,
     immediatelyRender: false,
-    content: "<div></div>",
+    content: value,
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
       onChange && onChange({ target: { name: name, value: html } });
@@ -35,8 +33,6 @@ export default function RichTextEditor({
 
   let inputClasses = `h-20 w-full rounded-lg border appearance-none px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3 dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30 dark:focus:border-brand-800 ${className}`;
   inputClasses += ` bg-transparent text-gray-800 border-gray-300 focus:border-brand-300 focus:ring-3 focus:ring-brand-500/10 dark:border-gray-700 dark:bg-gray-900 dark:text-white/90 dark:focus:border-brand-800`;
-
-  const onClick = () => {};
 
   return (
     <>
