@@ -1,0 +1,15 @@
+// server/
+// ├── src/
+// │   ├── models/
+// │   │   └── blog.model.js
+// │   ├── controllers/
+// │   │   └── blog.controller.js
+// │   ├── routes/
+// │   │   └── blog.routes.js
+// │   ├── services/
+// │   │   └── blog.service.js
+// │   └── app.js
+// GET FULLNAME METHOD
+userSchema.virtual("fullName").get(function () {
+  return `${this.firstName} ${this.lastName}`;
+});

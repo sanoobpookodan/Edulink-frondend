@@ -1,7 +1,9 @@
 import Banner from "@/components/shared/Banner";
+
 export const metadata = {
   title: "About",
 };
+
 export default function AboutPage() {
   return (
     <div>

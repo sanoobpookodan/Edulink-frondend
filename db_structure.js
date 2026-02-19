@@ -122,8 +122,3 @@ const students = {
   gender: "male", //enum: ["male", "female", "other"]
   dateOfBirth: "1995-12-31",
 };
-
-// GET FULLNAME METHOD
-// userSchema.virtual("fullName").get(function () {
-//   return `${this.firstName} ${this.lastName}`;
-// });

@@ -1,7 +1,9 @@
+import TestimonialListView from "@/modules/admin/testimonials/TestimonialListView";
+
 export const metadata = {
   title: "Testimonials",
 };
 // Testimonials admin list page
 export default function TestimonialsList() {
-  return <div>List of testimonials</div>;
+  return <TestimonialListView />;
 }

@@ -1,7 +1,9 @@
+import AboutListView from "@/modules/admin/about/AboutListView";
+
 export const metadata = {
   title: "About",
 };
-// About admin list page
-export default function AboutList() {
-  return <div>List of About items</div>;
+
+export default function Page() {
+  return <AboutListView />;
 }

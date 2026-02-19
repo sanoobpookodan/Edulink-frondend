@@ -1,9 +1,6 @@
 export const metadata = {
   title: "Home",
 };
-("use client");
-
-import { useEffect } from "react";
 
 export default function HomePage() {
   return (

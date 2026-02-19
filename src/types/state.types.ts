@@ -17,7 +17,7 @@ export interface About {
   image?: File | string;
   status: "active" | "inactive";
 }
-import { ActiveStatus, PublishStatus } from "./";
+import { ActiveStatus, PublishStatus } from ".";
 
 export interface Spotlight {
   title: string;
@@ -35,4 +35,16 @@ export interface Blog {
   tags: string[];
   status: PublishStatus;
   content: string;
+}
+
+export interface Course {
+  title: string;
+  slug: string;
+  description: string;
+  image?: File | string;
+  duration: string;
+  status: "active" | "inactive";
+  content: string;
+  category: string;
+  instructor: string;
 }

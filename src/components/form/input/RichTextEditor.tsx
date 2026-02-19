@@ -13,7 +13,7 @@ interface Props {
   name?: string;
   className?: string;
   value?: string;
-  onChange?: (value: string) => void;
+  onChange?: (e: { target: { name: string; value: string } }) => void;
 }
 
 export default function RichTextEditor({
@@ -29,7 +29,7 @@ export default function RichTextEditor({
     content: "<div></div>",
     onUpdate: ({ editor }) => {
       const html = editor.getHTML();
-      onChange && onChange(html);
+      onChange && onChange({ target: { name: name, value: html } });
     },
   });
 

@@ -1,11 +1,9 @@
+import BlogListView from "@/modules/admin/blogs/BlogListView";
+
 export const metadata = {
   title: "Blogs",
 };
-// Blogs admin page
-export default function BlogsList() {
-  return (
-    <div>
-      <h1>Blogs Admin</h1>
-    </div>
-  );
+
+export default function Page() {
+  return <BlogListView />;
 }

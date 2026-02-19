@@ -1,27 +1,35 @@
-import type { Testimonial } from "@/types/state";
+import type {
+  Testimonial,
+  BlogCategory,
+  CourseCategory,
+  About,
+  Spotlight,
+  Blog,
+  Course,
+} from "@/types";
+
 const testimonialInitial: Testimonial = {
   student: "",
   description: "",
 };
-import type { BlogCategory } from "@/types/state";
+
 const blogCategoryInitial: BlogCategory = {
   name: "",
   slug: "",
 };
-import type { CourseCategory } from "@/types/state";
+
 const courseCategoryInitial: CourseCategory = {
   name: "",
   slug: "",
   image: "",
 };
-import type { About } from "@/types/state";
+
 const aboutInitial: About = {
   title: "",
   description: "",
   image: "",
   status: "active",
 };
-import type { Spotlight, Blog } from "@/types/state";
 
 const spotlightInitial: Spotlight = {
   title: "",
@@ -41,6 +49,18 @@ const blogInitial: Blog = {
   content: "",
 };
 
+const courseInitial: Course = {
+  title: "",
+  slug: "",
+  description: "",
+  image: "",
+  duration: "",
+  status: "active",
+  content: "",
+  category: "",
+  instructor: "",
+};
+
 export {
   blogInitial,
   spotlightInitial,
@@ -48,4 +68,5 @@ export {
   courseCategoryInitial,
   blogCategoryInitial,
   testimonialInitial,
+  courseInitial,
 };

@@ -1,4 +1,4 @@
-import { imageExtensions } from "@/constants/fileTypes";
+import { imageExtensions } from "@/constants";
 import React, { FC } from "react";
 
 interface FileInputProps {

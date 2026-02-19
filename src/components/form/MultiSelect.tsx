@@ -8,7 +8,7 @@ interface Option {
 interface MultiSelectProps {
   options?: Option[];
   defaultSelected?: string[];
-  onChange: (name: string, selected: string[]) => void;
+  onChange: (e: { target: { name: string; value: string[] } }) => void;
   name: string;
   placeholder?: string;
   disabled?: boolean;
@@ -37,13 +37,15 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
       : [...selectedOptions, optionValue];
 
     setSelectedOptions(newSelectedOptions);
-    if (onChange && name) onChange(name, newSelectedOptions);
+    if (onChange && name)
+      onChange({ target: { name, value: newSelectedOptions } });
   };
 
   const removeOption = (index: number, value: string) => {
     const newSelectedOptions = selectedOptions.filter((opt) => opt !== value);
     setSelectedOptions(newSelectedOptions);
-    if (onChange && name) onChange(name, newSelectedOptions);
+    if (onChange && name)
+      onChange({ target: { name, value: newSelectedOptions } });
   };
 
   const selectedValuesText: string[] = selectedOptions.map(
