@@ -62,7 +62,6 @@ const Input: FC<InputProps> = ({
         className={inputClasses}
         value={value}
       />
-
       {/* Optional Hint Text */}
       {hint && (
         <p
@@ -74,7 +73,7 @@ const Input: FC<InputProps> = ({
                 : "text-gray-500"
           }`}
         >
-          {hint}
+          {hint}sasas
         </p>
       )}
     </div>

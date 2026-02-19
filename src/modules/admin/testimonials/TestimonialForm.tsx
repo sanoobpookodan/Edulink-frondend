@@ -4,18 +4,9 @@ import Label from "@/components/form/Label";
 import Select from "@/components/form/Select";
 import TextArea from "@/components/form/input/TextArea";
 import Button from "@/components/ui/button/Button";
-import {
-  BLOG_STATUS_OPTIONS,
-  blogInitial,
-  testimonialInitial,
-} from "@/constants";
-import Input from "@/components/form/input/InputField";
-import FileInput from "@/components/form/input/FileInput";
-import RichTextEditor from "@/components/form/input/RichTextEditor";
+import { testimonialInitial } from "@/constants";
 import Form from "@/components/form/Form";
-import { ChevronDownIcon } from "@/icons";
-import MultiSelect from "@/components/form/MultiSelect";
-import { BaseFormProps, Blog, Testimonial } from "@/types";
+import { BaseFormProps, Testimonial } from "@/types";
 
 export default function TestimonialForm({
   mode,
@@ -47,6 +38,7 @@ export default function TestimonialForm({
                     name="description"
                     value={form.description}
                     onChange={handleChange}
+                    placeholder="Enter description"
                   />
                 </div>
                 <div className="flex items-center gap-5">

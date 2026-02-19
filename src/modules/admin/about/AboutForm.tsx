@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import ComponentCard from "@/components/common/ComponentCard";
 import Label from "@/components/form/Label";
 import Input from "@/components/form/input/InputField";
@@ -35,6 +34,7 @@ export default function AboutForm({
                     name="title"
                     value={form.title}
                     onChange={handleChange}
+                    placeholder="Enter your title"
                   />
                 </div>
                 <div>
@@ -44,11 +44,18 @@ export default function AboutForm({
                     name="description"
                     value={form.description}
                     onChange={handleChange}
+                    placeholder="Enter your description"
                   />
                 </div>
                 <div>
                   <Label htmlFor="image">Image</Label>
-                  <FileInput id="image" name="image" onChange={handleChange} />
+                  <FileInput
+                    id="image"
+                    name="image"
+                    onChange={handleChange}
+                    file={form.image}
+                    placeholder="Select an image"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="status">Status</Label>

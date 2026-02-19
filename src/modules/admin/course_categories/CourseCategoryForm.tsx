@@ -30,6 +30,7 @@ export default function CourseCategoryForm({
                     name="name"
                     value={form.name}
                     onChange={handleChange}
+                    placeholder="Enter category name"
                   />
                 </div>
                 <div>
@@ -43,7 +44,12 @@ export default function CourseCategoryForm({
                 </div>
                 <div>
                   <Label htmlFor="image">Image</Label>
-                  <FileInput id="image" name="image" onChange={handleChange} />
+                  <FileInput
+                    id="image"
+                    name="image"
+                    onChange={handleChange}
+                    placeholder="Select an image"
+                  />
                 </div>
                 <div className="flex items-center gap-5">
                   <Button>{mode === "create" ? "Create" : "Update"}</Button>

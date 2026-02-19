@@ -31,6 +31,7 @@ export default function BlogForm({
                     name="title"
                     value={form.title}
                     onChange={handleChange}
+                    placeholder="Enter blog title"
                   />
                 </div>
                 <div>
@@ -49,11 +50,17 @@ export default function BlogForm({
                     name="description"
                     value={form.description}
                     onChange={handleChange}
+                    placeholder="Enter blog description"
                   />
                 </div>
                 <div>
                   <Label htmlFor="image">Image</Label>
-                  <FileInput id="image" name="image" onChange={handleChange} />
+                  <FileInput
+                    id="image"
+                    name="image"
+                    onChange={handleChange}
+                    placeholder="Select an image"
+                  />
                 </div>
 
                 <div className="relative">
@@ -62,6 +69,7 @@ export default function BlogForm({
                     name="categories"
                     onChange={handleChange}
                     options={BLOG_STATUS_OPTIONS}
+                    placeholder="Select categories"
                   />
                 </div>
 

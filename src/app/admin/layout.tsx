@@ -1,5 +1,6 @@
 import { Outfit } from "next/font/google";
 import "@/styles/admin-styles.css";
+import "@/styles/admin-custome-styles.scss";
 import "flatpickr/dist/flatpickr.css";
 import { SidebarProvider } from "@/context/SidebarContext";
 import { ThemeProvider } from "@/context/ThemeContext";

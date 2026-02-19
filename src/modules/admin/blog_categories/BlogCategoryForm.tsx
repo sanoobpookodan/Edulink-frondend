@@ -28,6 +28,7 @@ export default function BlogCategoryForm({
                   name="name"
                   value={form.name}
                   onChange={handleChange}
+                  placeholder="Enter category name"
                 />
               </div>
               <div>
