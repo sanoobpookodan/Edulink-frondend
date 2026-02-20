@@ -42,9 +42,10 @@ export interface Blog {
 export interface Lesson {
   title: string;
   duration: string;
+  video_url: string;
 }
 
-export interface CurriculumSection {
+export interface Curriculum {
   title: string;
   lessons: Lesson[];
 }

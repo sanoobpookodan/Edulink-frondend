@@ -1,5 +1,5 @@
-import BlogForm from "./CourseForm";
+import CourseForm from "./CourseForm";
 
-export default function BlogEditView() {
-  return <BlogForm mode="edit" />;
+export default function CourseEditView() {
+  return <CourseForm mode="edit" />;
 }
