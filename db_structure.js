@@ -72,6 +72,24 @@ const review = {
   comment: "Review comment goes here...",
 };
 
+const user = {
+  firstName: "John",
+  lastName: "Doe",
+  email: "john.doe@example.com",
+  passwordHash: "hashed_password_here",
+  role: "student", //enum: ["student", "instructor", "admin"]
+  isActive: true,
+};
+
+const students = {
+  userId: user_id, //reference to user table for authentication
+  phone: "123-456-7890",
+  profileImage: "/assets/images/students/profile.jpg",
+  gender: "male", //enum: ["male", "female", "other"]
+  dateOfBirth: "1995-12-31",
+  createdAt: "2024-10-01T00:00:00Z",
+};
+
 const instructor = {
   userId: user_id, //reference to user table for authentication
   name: "Jhon Doe",
@@ -105,20 +123,4 @@ const payment = {
   transactionId: "unique_transaction_id",
   status: "pending", //enum: ["pending", "success", "failed"]
   paidAt: null,
-};
-const user = {
-  firstName: "John",
-  lastName: "Doe",
-  email: "john.doe@example.com",
-  passwordHash: "hashed_password_here",
-  role: "student", //enum: ["student", "instructor", "admin"]
-  isActive: true,
-};
-const students = {
-  userId: user_id, //reference to user table for authentication
-  phone: "123-456-7890",
-  createdAt: "2024-10-01T00:00:00Z",
-  profileImage: "/assets/images/students/profile.jpg",
-  gender: "male", //enum: ["male", "female", "other"]
-  dateOfBirth: "1995-12-31",
 };
