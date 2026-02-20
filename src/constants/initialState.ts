@@ -8,6 +8,8 @@ import type {
   Course,
   Curriculum,
   Lesson,
+  CreateInstructorForm,
+  CreateStudentForm,
 } from "@/types";
 
 const testimonialInitial: Testimonial = {
@@ -62,20 +64,28 @@ const courseInitial: Course = {
   instructor: "",
 };
 
-// const curriculumInitial: Curriculum[] = [
-//   {
-//     title: "chapter 1",
-//     lessons: [{ title: "Lesson 1-ch1", duration: "", video_url: "" }],
-//   },
-//   {
-//     title: "chapter 2",
-//     lessons: [{ title: "Lesson 1-ch2", duration: "", video_url: "" }],
-//   },
-//   {
-//     title: "chapter 3",
-//     lessons: [{ title: "Lesson 1-ch3", duration: "", video_url: "" }],
-//   },
-// ];
+const instructorInitial: CreateInstructorForm = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  bio: "",
+  image: "",
+  password: "",
+  confirmPassword: "",
+};
+
+const studentInitial: CreateStudentForm = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  image: "",
+  phone: "",
+  gender: "" as null,
+  dateOfBirth: "",
+  password: "",
+  confirmPassword: "",
+};
+
 const curriculumInitial: Curriculum[] = [
   {
     title: "",
@@ -95,4 +105,6 @@ export {
   courseInitial,
   curriculumInitial,
   overviewInitial,
+  instructorInitial,
+  studentInitial,
 };

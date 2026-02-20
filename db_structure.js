@@ -95,12 +95,6 @@ const instructor = {
   name: "Jhon Doe",
   image: "/assets/wp-content/uploads/2025/10/2-1.png",
   bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum ligula non quam scelerisque hendrerit.",
-
-  social: {
-    facebook: "https://example.com",
-    twitter: "https://example.com",
-    linkedin: "https://example.com",
-  },
   students: 2, //dynamic - calculated from courses entroll
   courses: 8, //dynamic - calculated from courses listed
   courseList: [course_id], //dynamic - list of courses taught by the instructor

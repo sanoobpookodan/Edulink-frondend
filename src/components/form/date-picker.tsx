@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
-import flatpickr from 'flatpickr';
-import 'flatpickr/dist/flatpickr.css';
-import Label from './Label';
-import { CalenderIcon } from '../../icons';
+import { useEffect } from "react";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.css";
+import Label from "./Label";
+import { CalenderIcon } from "../../icons";
 import Hook = flatpickr.Options.Hook;
 import DateOption = flatpickr.Options.DateOption;
 
 type PropsType = {
   id: string;
   mode?: "single" | "multiple" | "range" | "time";
-  onChange?: Hook | Hook[];
+  onChange: (e: { target: { name: string; value: string[] } }) => void;
   defaultDate?: DateOption;
   label?: string;
+  name?: string;
   placeholder?: string;
 };
 
@@ -22,15 +23,22 @@ export default function DatePicker({
   label,
   defaultDate,
   placeholder,
+  name,
 }: PropsType) {
+  const onChangeDate = (selectedDates, dateStr) => {
+    if (name) {
+      onChange({ target: { name, value: dateStr } });
+    }
+  };
+
   useEffect(() => {
     const flatPickr = flatpickr(`#${id}`, {
       mode: mode || "single",
-      static: true,
+      static: false,
       monthSelectorType: "static",
       dateFormat: "Y-m-d",
       defaultDate,
-      onChange,
+      onChange: onChangeDate,
     });
 
     return () => {
@@ -48,6 +56,10 @@ export default function DatePicker({
         <input
           id={id}
           placeholder={placeholder}
+          onChange={(e) => {
+            onChange({ target: { name: name || id, value: [e.target.value] } });
+            console.log(e.target.value, "===date");
+          }}
           className="h-11 w-full rounded-lg border appearance-none px-4 py-2.5 text-sm shadow-theme-xs placeholder:text-gray-400 focus:outline-hidden focus:ring-3  dark:bg-gray-900 dark:text-white/90 dark:placeholder:text-white/30  bg-transparent text-gray-800 border-gray-300 focus:border-brand-300 focus:ring-brand-500/20 dark:border-gray-700  dark:focus:border-brand-800"
         />
 
