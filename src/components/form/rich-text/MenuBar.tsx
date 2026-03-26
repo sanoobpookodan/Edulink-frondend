@@ -3,6 +3,7 @@
 import type { Editor } from "@tiptap/core";
 import { useEditorState } from "@tiptap/react";
 import { menuBarStateSelector } from "./menuBarState";
+const headingLevels = [1, 2, 3, 4, 5, 6] as const;
 
 export const MenuBar = ({ editor }: { editor: Editor | null }) => {
   const editorState = useEditorState({
@@ -75,7 +76,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
         Paragraph
       </button>
 
-      {[1, 2, 3, 4, 5, 6].map((level) => (
+      {headingLevels.map((level) => (
         <button
           key={level}
           onClick={() => editor.chain().focus().toggleHeading({ level }).run()}

@@ -84,7 +84,7 @@ const user = {
 const students = {
   userId: user_id, //reference to user table for authentication
   phone: "123-456-7890",
-  profileImage: "/assets/images/students/profile.jpg",
+  image: "/assets/images/students/profile.jpg",
   gender: "male", //enum: ["male", "female", "other"]
   dateOfBirth: "1995-12-31",
   createdAt: "2024-10-01T00:00:00Z",
@@ -92,8 +92,9 @@ const students = {
 
 const instructor = {
   userId: user_id, //reference to user table for authentication
-  name: "Jhon Doe",
+  phone: "123-456-7890",
   image: "/assets/wp-content/uploads/2025/10/2-1.png",
+  gender: "female", //enum: ["male", "female", "other"]'
   bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum ligula non quam scelerisque hendrerit.",
   students: 2, //dynamic - calculated from courses entroll
   courses: 8, //dynamic - calculated from courses listed
