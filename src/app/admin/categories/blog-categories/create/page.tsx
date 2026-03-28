@@ -1,4 +1,4 @@
-import BlogCategoryCreateView from "@/modules/admin/blog_categories/BlogCategoryCreateView";
+import BlogCategoryCreateView from "@/modules/admin/blog_categories/components/BlogCategoryCreateView";
 
 export const metadata = {
   title: "Create Blog Category",

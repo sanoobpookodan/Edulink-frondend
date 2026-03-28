@@ -18,7 +18,7 @@ import Label from "@/components/form/Label";
 import Input from "@/components/form/input/InputField";
 import Checkbox from "@/components/form/input/Checkbox";
 import AuthLayout from "./AuthPageLayout";
-import { loginApi } from "./auth.service";
+import { loginApi } from "../service/auth.service";
 import { useAuthStore } from "@/store/auth.store";
 import { useRouter } from "next/navigation";
 

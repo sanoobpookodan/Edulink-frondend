@@ -1,4 +1,4 @@
-import InstructorEditView from "@/modules/admin/instructors/InstructorEditView";
+import InstructorEditView from "@/modules/admin/instructors/components/InstructorEditView";
 
 export const metadata = {
   title: "Edit Instructor",

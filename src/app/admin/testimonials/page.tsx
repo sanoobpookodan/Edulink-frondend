@@ -1,4 +1,4 @@
-import TestimonialListView from "@/modules/admin/testimonials/TestimonialListView";
+import TestimonialListView from "@/modules/admin/testimonials/components/TestimonialListView";
 
 export const metadata = {
   title: "Testimonials",

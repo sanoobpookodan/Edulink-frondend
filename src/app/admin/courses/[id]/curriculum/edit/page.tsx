@@ -1,4 +1,4 @@
-import CurriculumEditView from "@/modules/admin/courses/curriculum/CurriculumEditView";
+import CurriculumEditView from "@/modules/admin/courses/curriculum/components/CurriculumEditView";
 
 export const metadata = {
   title: "Edit Curriculum",

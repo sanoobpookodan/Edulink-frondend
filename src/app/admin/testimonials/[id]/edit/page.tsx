@@ -1,4 +1,4 @@
-import TestimonialEditView from "@/modules/admin/testimonials/TestimonialEditView";
+import TestimonialEditView from "@/modules/admin/testimonials/components/TestimonialEditView";
 
 export const metadata = {
   title: "Edit Testimonial",

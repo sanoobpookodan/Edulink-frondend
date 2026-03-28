@@ -1,9 +1,7 @@
-export const DEV_BASE_URL = "http://localhost:3000/api";
-export const PROD_BASE_URL =
-  "https://edulink-backend-production.up.railway.app/api/";
+import { BASE_URL } from "./data";
 
-export const BASE_URL =
-  process.env.NODE_ENV === "development" ? DEV_BASE_URL : PROD_BASE_URL;
+export const API_URL = `${BASE_URL}/api`;
+export const API_TIMEOUT = 10000;
 
 export const API_ENDPOINTS = {
   auth: {

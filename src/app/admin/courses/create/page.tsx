@@ -1,4 +1,4 @@
-import CourseCreateView from "@/modules/admin/courses/CourseCreateView";
+import CourseCreateView from "@/modules/admin/courses/components/CourseCreateView";
 
 export const metadata = {
   title: "Create Course",

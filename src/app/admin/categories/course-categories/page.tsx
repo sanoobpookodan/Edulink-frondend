@@ -1,4 +1,4 @@
-import CourseCategoryListView from "@/modules/admin/course_categories/CourseCategoryListView";
+import CourseCategoryListView from "@/modules/admin/course_categories/components/CourseCategoryListView";
 
 export const metadata = {
   title: "Course Categories",

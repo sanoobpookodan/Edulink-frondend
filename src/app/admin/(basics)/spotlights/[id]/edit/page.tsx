@@ -1,4 +1,4 @@
-import SpotlightEditView from "@/modules/admin/spotlights/SpotlightEditView";
+import SpotlightEditView from "@/modules/admin/spotlights/components/SpotlightEditView";
 
 export const metadata = {
   title: "Edit Spotlight",

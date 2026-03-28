@@ -1,4 +1,4 @@
-import CourseCategoryCreateView from "@/modules/admin/course_categories/CourseCategoryCreateView";
+import CourseCategoryCreateView from "@/modules/admin/course_categories/components/CourseCategoryCreateView";
 
 export const metadata = {
   title: "Create Course Category",

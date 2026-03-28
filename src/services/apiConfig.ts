@@ -1,6 +1,4 @@
-import { BASE_URL } from "@/constants/api";
-export const API_BASE_URL = BASE_URL;
-export const API_TIMEOUT = 10000;
+import { API_URL, API_TIMEOUT } from "@/constants/api";
 
 import axios from "axios";
 
@@ -14,7 +12,7 @@ import type {
 } from "@/types/api.type";
 
 export const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_URL,
   timeout: API_TIMEOUT,
   headers: {
     "Content-Type": "application/json",
@@ -36,10 +34,7 @@ api.interceptors.request.use(
 );
 
 // Generic GET method
-export const get = async <T>(
-  url: string,
-  params?: object,
-): Promise<ApiGetResult<T>> => {
+export const get = async <T>(url: string, params?: object): Promise<ApiGetResult<T>> => {
   try {
     const response = await api.get<ApiResponse<T>>(url, { params });
     if (response.data && response.data.success) {
@@ -71,10 +66,7 @@ export const get = async <T>(
 };
 
 // Generic POST method
-export const post = async <T>(
-  url: string,
-  data?: object,
-): Promise<ApiPostResult<T>> => {
+export const post = async <T>(url: string, data?: object): Promise<ApiPostResult<T>> => {
   try {
     const response = await api.post<ApiResponse<T>>(url, data);
     if (response.data && response.data.success) {
@@ -106,10 +98,7 @@ export const post = async <T>(
 };
 
 // Generic PUT method
-export const put = async <T>(
-  url: string,
-  data?: object,
-): Promise<ApiPutResult<T>> => {
+export const put = async <T>(url: string, data?: object): Promise<ApiPutResult<T>> => {
   try {
     const response = await api.put<ApiResponse<T>>(url, data);
     if (response.data && response.data.success) {
@@ -139,10 +128,7 @@ export const put = async <T>(
 };
 
 // Generic PATCH method
-export const patch = async <T>(
-  url: string,
-  data?: object,
-): Promise<ApiPatchResult<T>> => {
+export const patch = async <T>(url: string, data?: object): Promise<ApiPatchResult<T>> => {
   try {
     const response = await api.patch<ApiResponse<T>>(url, data);
     if (response.data && response.data.success) {

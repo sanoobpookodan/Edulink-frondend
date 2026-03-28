@@ -1,4 +1,4 @@
-import StudenttListView from "@/modules/admin/students/StudenttListView";
+import StudenttListView from "@/modules/admin/students/components/StudenttListView";
 
 export const metadata = {
   title: "Students",

@@ -1,4 +1,4 @@
-import SignInForm from "../../../modules/admin/auth/SignInForm";
+import SignInForm from "../../../modules/admin/auth/components/SignInForm";
 import { ThemeProvider } from "@/context/ThemeContext";
 import "@/styles/admin-styles.css";
 import "@/styles/admin-custome-styles.scss";

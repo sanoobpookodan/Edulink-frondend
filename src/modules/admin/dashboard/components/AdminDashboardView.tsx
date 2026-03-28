@@ -1,8 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { getDashboardData } from "./dashboard.service";
-import { DashboardData } from "./dashboard.type";
+import { getDashboardData } from "../service/dashboard.service";
+import { DashboardData } from "../types/dashboard.type";
 import { showError } from "@/utils/toast";
+import FullScreenLoader from "@/components/common/Loader";
 
 export default function AdminDashboardView() {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -27,11 +28,7 @@ export default function AdminDashboardView() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex items-center justify-center p-12 min-h-[400px]">
-        <div className="w-8 h-8 md:w-12 md:h-12 border-4 border-brand-500 rounded-full border-t-transparent animate-spin"></div>
-      </div>
-    );
+    return <FullScreenLoader />;
   }
 
   return (
@@ -52,20 +49,13 @@ export default function AdminDashboardView() {
         <div className="p-6 transition-all duration-300 bg-white border border-gray-100 rounded-2xl shadow-theme-sm dark:bg-gray-dark dark:border-gray-800 hover:-translate-y-1 hover:shadow-theme-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Total Users
-              </p>
+              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Users</p>
               <p className="mt-3 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {data?.stats?.totalUsers || 0}
               </p>
             </div>
             <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-50 text-brand-500 dark:bg-brand-500/10 dark:text-brand-400">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -81,20 +71,13 @@ export default function AdminDashboardView() {
         <div className="p-6 transition-all duration-300 bg-white border border-gray-100 rounded-2xl shadow-theme-sm dark:bg-gray-dark dark:border-gray-800 hover:-translate-y-1 hover:shadow-theme-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Active Users
-              </p>
+              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Active Users</p>
               <p className="mt-3 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {data?.stats?.activeUsers || 0}
               </p>
             </div>
             <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-success-50 text-success-500 dark:bg-success-500/10 dark:text-success-400">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -110,20 +93,13 @@ export default function AdminDashboardView() {
         <div className="p-6 transition-all duration-300 bg-white border border-gray-100 rounded-2xl shadow-theme-sm dark:bg-gray-dark dark:border-gray-800 hover:-translate-y-1 hover:shadow-theme-lg">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                Total Courses
-              </p>
+              <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Courses</p>
               <p className="mt-3 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {data?.stats?.totalCourses || 0}
               </p>
             </div>
             <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-warning-50 text-warning-500 dark:bg-warning-500/10 dark:text-warning-400">
-              <svg
-                className="w-7 h-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -138,9 +114,7 @@ export default function AdminDashboardView() {
 
       {/* Recent Activity */}
       <div className="p-6 bg-white border border-gray-100 rounded-3xl shadow-theme-sm dark:bg-gray-dark dark:border-gray-800">
-        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
-          Recent Activity
-        </h2>
+        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Recent Activity</h2>
         {data?.recentActivity?.length ? (
           <ul className="space-y-4">
             {data.recentActivity.map((activity, i) => (
@@ -149,21 +123,14 @@ export default function AdminDashboardView() {
                 className="flex items-center gap-4 py-3 border-b last:border-0 border-gray-100 dark:border-gray-800"
               >
                 <div className="w-2.5 h-2.5 rounded-full bg-brand-500 flex-shrink-0" />
-                <span className="text-sm text-gray-600 dark:text-gray-400">
-                  Activity #{i + 1}
-                </span>
+                <span className="text-sm text-gray-600 dark:text-gray-400">Activity #{i + 1}</span>
               </li>
             ))}
           </ul>
         ) : (
           <div className="flex flex-col items-center justify-center py-12 text-center">
             <div className="flex items-center justify-center w-16 h-16 mb-4 text-gray-400 rounded-full bg-gray-50 dark:bg-gray-800/50 dark:text-gray-500">
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+              <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -172,9 +139,7 @@ export default function AdminDashboardView() {
                 />
               </svg>
             </div>
-            <p className="text-sm font-medium text-gray-900 dark:text-white">
-              No recent activity
-            </p>
+            <p className="text-sm font-medium text-gray-900 dark:text-white">No recent activity</p>
             <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
               Actions taken on the platform will appear here.
             </p>

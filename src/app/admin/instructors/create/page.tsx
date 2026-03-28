@@ -1,4 +1,4 @@
-import InstructorCreateView from "@/modules/admin/instructors/InstructorCreateView";
+import InstructorCreateView from "@/modules/admin/instructors/components/InstructorCreateView";
 
 export const metadata = {
   title: "Create Instructor",

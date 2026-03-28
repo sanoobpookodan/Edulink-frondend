@@ -1,4 +1,4 @@
-import SpotlightListView from "@/modules/admin/spotlights/SpotlightListView";
+import SpotlightListView from "@/modules/admin/spotlights/components/SpotlightListView";
 
 export const metadata = {
   title: "Spotlights",

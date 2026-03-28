@@ -1,4 +1,4 @@
-import BlogCreateView from "@/modules/admin/blogs/BlogCreateView";
+import BlogCreateView from "@/modules/admin/blogs/components/BlogCreateView";
 
 export const metadata = {
   title: "Create Blog",

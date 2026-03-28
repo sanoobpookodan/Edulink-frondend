@@ -1,4 +1,4 @@
-import StudentCreateView from "@/modules/admin/students/StudentCreateView";
+import StudentCreateView from "@/modules/admin/students/components/StudentCreateView";
 
 export const metadata = {
   title: "Create Student",

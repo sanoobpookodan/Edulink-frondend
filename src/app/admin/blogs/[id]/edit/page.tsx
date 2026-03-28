@@ -1,4 +1,4 @@
-import BlogEditView from "@/modules/admin/blogs/BlogEditView";
+import BlogEditView from "@/modules/admin/blogs/components/BlogEditView";
 
 export const metadata = {
   title: "Edit Blog",

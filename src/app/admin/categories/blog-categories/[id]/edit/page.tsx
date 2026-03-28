@@ -1,4 +1,4 @@
-import BlogCategoryEditView from "@/modules/admin/blog_categories/BlogCategoryEditView";
+import BlogCategoryEditView from "@/modules/admin/blog_categories/components/BlogCategoryEditView";
 
 export const metadata = {
   title: "Edit Blog Category",
