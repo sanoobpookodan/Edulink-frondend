@@ -1,10 +1,15 @@
+import CourseView from "@/modules/admin/courses/components/CourseView";
+
 export const metadata = {
   title: "Course Details",
 };
+
 interface ViewCourseProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ViewCourse({ params }: ViewCourseProps) {
-  return <div>View course with ID: {params.id}</div>;
+export default async function ViewCoursePage({ params }: ViewCourseProps) {
+  const { id } = await params;
+
+  return <CourseView id={id} />;
 }
