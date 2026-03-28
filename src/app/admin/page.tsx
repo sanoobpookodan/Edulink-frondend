@@ -1,7 +1,9 @@
+import AdminDashboardView from "@/modules/admin/dashboard/AdminDashboardView";
+
 export const metadata = {
-  title: "Admin",
+  title: "Dashboard | Edulink",
 };
 
 export default function Page() {
-  return <div>Admin Page</div>;
+  return <AdminDashboardView />;
 }

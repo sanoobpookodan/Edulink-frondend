@@ -60,11 +60,7 @@ export default function SignInView() {
         showSuccess(message);
         router.replace("/admin");
       } else {
-        try {
-          showError(message);
-        } catch (error) {
-          console.log(error);
-        }
+        showError(message);
       }
     });
   };

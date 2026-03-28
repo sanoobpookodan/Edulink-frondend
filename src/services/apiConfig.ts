@@ -51,19 +51,21 @@ export const get = async <T>(
       };
     }
     return {
-      status: response.status,
+      status: false,
       message: response.data.message ?? "Some error with 200 status code",
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
       return {
-        status: error.response?.status || 500,
+        status: false,
         message: error.response?.data?.message || error.message,
+        errorCode: error.response?.status || 500,
       };
     }
     return {
-      status: 500,
+      status: false,
       message: "An unexpected error occurred",
+      errorCode: 500,
     };
   }
 };

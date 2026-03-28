@@ -23,8 +23,8 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    icon: <GridIcon />,
     name: "Dashboard",
+    icon: <GridIcon />,
     path: "/admin",
   },
   {
@@ -63,7 +63,10 @@ const navItems: NavItem[] = [
     name: "Categories",
     icon: <DocsIcon />,
     subItems: [
-      { name: "Course Categories", path: "/admin/categories/course-categories" },
+      {
+        name: "Course Categories",
+        path: "/admin/categories/course-categories",
+      },
       { name: "Blog Categories", path: "/admin/categories/blog-categories" },
     ],
   },

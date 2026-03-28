@@ -5,7 +5,7 @@ import "@/styles/admin-custome-styles.scss";
 import { Outfit } from "next/font/google";
 
 export const metadata = {
-  title: "Login",
+  title: "Login | Edulink",
 };
 const outfit = Outfit({
   subsets: ["latin"],

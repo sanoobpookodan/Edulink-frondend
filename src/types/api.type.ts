@@ -2,7 +2,7 @@ export interface ApiError {
   field: string;
   message: string;
 }
-
+// Api response of all method
 export interface ApiResponse<T> {
   success: boolean;
   data?: T;
@@ -15,7 +15,7 @@ export interface ApiResponse<T> {
     totalPages: number;
   };
 }
-
+// Api result of each method
 export interface ApiGetResult<T> {
   status: boolean | number;
   data?: T;
@@ -26,6 +26,7 @@ export interface ApiGetResult<T> {
     total: number;
     totalPages: number;
   };
+  errorCode?: number;
 }
 
 export interface ApiPostResult<T> {

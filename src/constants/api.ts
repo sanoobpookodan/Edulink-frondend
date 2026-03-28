@@ -13,6 +13,7 @@ export const API_ENDPOINTS = {
     refresh: "/auth/refresh",
   },
   dashboard: {
+    dashboard: "/dashboard",
     profile: "/dashboard/profile",
   },
   courses: {
