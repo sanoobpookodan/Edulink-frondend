@@ -13,8 +13,9 @@ interface InputProps {
   step?: number;
   disabled?: boolean;
   success?: boolean;
-  error?: boolean;
-  hint?: string; // Optional hint text
+  error?: string;
+  // error?: boolean;
+  // hint?: string;
 }
 
 const Input: FC<InputProps> = ({
@@ -29,8 +30,8 @@ const Input: FC<InputProps> = ({
   step,
   disabled = false,
   success = false,
-  error = false,
-  hint,
+  error,
+  // hint,
   value = "",
 }) => {
   // Determine input styles based on state (disabled, success, error)
@@ -62,8 +63,11 @@ const Input: FC<InputProps> = ({
         className={inputClasses}
         value={value}
       />
+      {/* Error Show */}
+      {error && <p className={`mt-1.5 text-xs ${"text-error-500"}`}>{error}</p>}
+
       {/* Optional Hint Text */}
-      {hint && (
+      {/* {hint && (
         <p
           className={`mt-1.5 text-xs ${
             error
@@ -73,9 +77,9 @@ const Input: FC<InputProps> = ({
                 : "text-gray-500"
           }`}
         >
-          {hint}sasas
+          {hint}
         </p>
-      )}
+      )} */}
     </div>
   );
 };

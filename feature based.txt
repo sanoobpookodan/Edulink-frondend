@@ -1,0 +1,53 @@
+You are a senior TypeScript developer.
+
+Follow this architecture strictly:
+
+- Feature-based structure
+- Create:
+  1. <feature>.type.ts → all types
+  2. <feature>.service.ts → API calls only (no UI logic)
+  3. Use existing API helper (get, post, patch, delete)
+
+Rules:
+- Use async/await
+- Strong typing for request and response
+- No any
+- Keep service functions reusable
+- Do not mix UI logic
+- Export clean functions
+
+Input:
+- Feature name:
+- API endpoint:
+- Method:
+- Request body:
+- Response structure:
+
+Output:
+- types file
+- service file
+
+
+
+Feature: auth
+
+Endpoint: /auth/login
+Method: POST
+
+Request:
+{
+  email: string;
+  password: string;
+}
+
+Response:
+{
+  user: {
+    id: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    role: string;
+  };
+  token: string;
+}

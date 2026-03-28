@@ -1,11 +1,17 @@
+// "use client";
+
 import { Outfit } from "next/font/google";
+// styles
 import "@/styles/admin-styles.css";
 import "@/styles/admin-custome-styles.scss";
 import "flatpickr/dist/flatpickr.css";
+
 import { SidebarProvider } from "@/context/SidebarContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import AdminStructure from "@/layout/AdminStructure";
+
 import { Metadata } from "next";
+import AuthGuard from "@/components/AuthGuard";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -29,11 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.className} dark:bg-gray-900`}>
-        <ThemeProvider>
-          <SidebarProvider>
-            <AdminStructure>{children}</AdminStructure>
-          </SidebarProvider>
-        </ThemeProvider>
+        <AuthGuard>
+          <ThemeProvider>
+            <SidebarProvider>
+              <AdminStructure>{children}</AdminStructure>
+            </SidebarProvider>
+          </ThemeProvider>
+        </AuthGuard>
       </body>
     </html>
   );

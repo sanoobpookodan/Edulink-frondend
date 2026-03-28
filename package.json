@@ -16,15 +16,19 @@
     "@tiptap/react": "^3.19.0",
     "@tiptap/starter-kit": "^3.19.0",
     "autoprefixer": "^10.4.24",
+    "axios": "^1.13.6",
     "flatpickr": "^4.6.13",
     "next": "16.1.6",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-dropzone": "^15.0.0",
     "react-flatpickr": "^4.0.11",
+    "react-hot-toast": "^2.6.0",
     "sass": "^1.97.3",
     "swiper": "^12.1.1",
-    "tailwind-merge": "^3.4.1"
+    "tailwind-merge": "^3.4.1",
+    "zod": "^4.3.6",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
