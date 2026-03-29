@@ -12,6 +12,7 @@ import AdminStructure from "@/layout/AdminStructure";
 
 import { Metadata } from "next";
 import AuthGuard from "@/components/AuthGuard";
+import NavigationProvider from "@/context/NavigationProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -27,21 +28,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${outfit.className} dark:bg-gray-900`}>
-        <AuthGuard>
-          <ThemeProvider>
-            <SidebarProvider>
-              <AdminStructure>{children}</AdminStructure>
-            </SidebarProvider>
-          </ThemeProvider>
-        </AuthGuard>
+        <NavigationProvider>
+          <AuthGuard>
+            <ThemeProvider>
+              <SidebarProvider>
+                <AdminStructure>{children}</AdminStructure>
+              </SidebarProvider>
+            </ThemeProvider>
+          </AuthGuard>
+        </NavigationProvider>
       </body>
     </html>
   );

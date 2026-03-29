@@ -18,6 +18,9 @@ export const API_ENDPOINTS = {
     list: "/courses",
     detail: (id: string) => `/courses/${id}`,
     enroll: (id: string) => `/courses/${id}/enroll`,
+    create: "/courses",
+    update: (id: string) => `/courses/${id}`,
+    delete: (id: string) => `/courses/${id}`,
   },
   lessons: {
     list: (courseId: string) => `/courses/${courseId}/lessons`,

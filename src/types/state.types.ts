@@ -52,9 +52,7 @@ export interface Curriculum {
 
 export interface Course {
   title: string;
-  slug: string;
-  description: string;
-  duration: string;
+  slug?: string;
   image: string | File;
   content: string;
   category: string;

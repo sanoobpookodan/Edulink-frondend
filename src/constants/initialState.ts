@@ -56,9 +56,7 @@ const blogInitial: Blog = {
 const courseInitial: Course = {
   title: "",
   slug: "",
-  description: "",
   image: "",
-  duration: "",
   content: "",
   category: "",
   instructor: "",

@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { ZodSchema } from "zod";
 
 // event types for form handling
 export type NativeChangeEvent = React.ChangeEvent<
@@ -15,13 +16,29 @@ export interface CustomChangeEvent<T = string | File | string[]> {
 export type FormChangeEvent = NativeChangeEvent | CustomChangeEvent;
 
 // Props for the Form component
-export interface FormProps<T extends Record<string, unknown>> {
-  children: (props: {
-    form: T;
-    handleChange: (e: FormChangeEvent) => void;
-  }) => ReactNode;
-  className?: string;
+
+export type FormTouched<T> = Partial<Record<keyof T, boolean>>;
+export type FormErrors<T> = Partial<Record<keyof T, string>>;
+
+export interface FormProps<T> {
   initialData: T;
+  schema?: ZodSchema<T>;
+  className?: string;
+  onSubmit?: (data: T) => void;
+  children: (args: {
+    form: T;
+    field: (name: keyof T) => {
+      name: string;
+      value: any;
+      onChange: (e: FormChangeEvent) => void;
+      onBlur: () => void;
+      error?: string;
+    };
+    errors: FormErrors<T>;
+    isValid: boolean;
+    isDirty: boolean;
+    setFieldValue: (field: keyof T, value: string) => void;
+  }) => React.ReactNode;
 }
 
 export interface Props {

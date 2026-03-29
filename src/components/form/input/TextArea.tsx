@@ -8,7 +8,7 @@ interface TextareaProps {
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   className?: string; // Additional CSS classes
   disabled?: boolean; // Disabled state
-  error?: boolean; // Error state
+  error?: string; // Error state
   hint?: string; // Hint text to display
   id?: string; // Hint text to display
 }
@@ -22,7 +22,7 @@ const TextArea: React.FC<TextareaProps> = ({
   onChange, // Callback for changes
   className = "", // Additional custom styles
   disabled = false, // Disabled state
-  error = false, // Error state
+  error, // Error state
   hint = "", // Default hint text
 }) => {
   let textareaClasses = `w-full rounded-lg border px-4 py-2.5 text-sm shadow-theme-xs focus:outline-hidden ${className}`;
@@ -47,15 +47,7 @@ const TextArea: React.FC<TextareaProps> = ({
         className={textareaClasses}
         name={name}
       />
-      {hint && (
-        <p
-          className={`mt-2 text-sm ${
-            error ? "text-error-500" : "text-gray-500 dark:text-gray-400"
-          }`}
-        >
-          {hint}
-        </p>
-      )}
+      {error && <p className={`mt-1.5 text-xs ${"text-error-500"}`}>{error}</p>}
     </div>
   );
 };
