@@ -2,12 +2,15 @@
 
 import React, { useEffect, useState } from "react";
 import { getCourseDetail } from "../service/courses.service";
-import { Course, CurriculumModule, OverviewPoint } from "../types/courses.type";
+import { Course } from "../types/courses.type";
 import { IMAGE_URL } from "@/constants/data";
 import Loader from "@/components/common/Loader";
 import PageBreadcrumb from "@/components/common/PageBreadCrumb";
 import Badge from "@/components/ui/badge/Badge";
 import ComponentCard from "@/components/common/ComponentCard";
+import { navigate } from "@/utils/navigation";
+import Button from "@/components/ui/button/Button";
+import { EditIcon } from "@/icons";
 
 export default function CourseView({ id }: { id: string }) {
   const [course, setCourse] = useState<Course | null>(null);
@@ -40,7 +43,7 @@ export default function CourseView({ id }: { id: string }) {
 
   if (error) {
     return (
-      <div className="flex justify-center items-center min-h-[50vh] p-8">
+      <div className="flex justify-center items-center min-h-[50vh] p-8 ">
         <div className="bg-red-50 text-red-600 p-4 rounded-lg shadow-sm border border-red-100 max-w-lg text-center">
           <svg
             className="w-8 h-8 mx-auto mb-2 text-red-500"
@@ -81,9 +84,21 @@ export default function CourseView({ id }: { id: string }) {
   return (
     <div className="space-y-6">
       <PageBreadcrumb pageTitle="Course Details" />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start">
-        <ComponentCard>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-7 2xl:gap-x-32 ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-start ">
+        <ComponentCard className="relative">
+          {/* BUTTON TOP RIGHT */}
+          <div className="absolute right-4 top-4">
+            <Button
+              className="flex items-center gap-2 !rounded-full border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50 hover:text-gray-800 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-white/[0.03] dark:hover:text-gray-200"
+              onClick={() => navigate(`/admin/courses/${course.id}/edit`)}
+              startIcon={<EditIcon />}
+            >
+              Edit
+            </Button>
+          </div>
+
+          {/* CONTENT */}
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-7 2xl:gap-x-32">
             {fields.map((item, index) =>
               item.label === "Image" ? (
                 <div key={index}>
@@ -99,15 +114,15 @@ export default function CourseView({ id }: { id: string }) {
                 </div>
               ) : item.label === "Status" ? (
                 <div key={index}>
-                  <p className="mb-2  text-gray-500 dark:text-gray-400">{item.label}</p>
+                  <p className="mb-2 text-gray-500 dark:text-gray-400">{item.label}</p>
                   <Badge size="sm" color={course.status === "ACTIVE" ? "success" : "warning"}>
                     {course.status}
                   </Badge>
                 </div>
               ) : (
                 <div key={index}>
-                  <p className="mb-2  text-gray-500 dark:text-gray-400">{item.label}</p>
-                  <p className="text-sm  text-gray-800 dark:text-white/90">{item.value}</p>
+                  <p className="mb-2 text-gray-500 dark:text-gray-400">{item.label}</p>
+                  <p className="text-sm text-gray-800 dark:text-white/90">{item.value}</p>
                 </div>
               ),
             )}

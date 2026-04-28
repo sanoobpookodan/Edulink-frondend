@@ -5,7 +5,7 @@ import type {
   About,
   Spotlight,
   Blog,
-  Course,
+  // Course,
   Curriculum,
   Lesson,
   CreateInstructorForm,
@@ -53,15 +53,6 @@ const blogInitial: Blog = {
   content: "",
 };
 
-const courseInitial: Course = {
-  title: "",
-  slug: "",
-  image: "",
-  content: "",
-  category: "",
-  instructor: "",
-};
-
 const instructorInitial: CreateInstructorForm = {
   firstName: "",
   lastName: "",
@@ -100,7 +91,6 @@ export {
   courseCategoryInitial,
   blogCategoryInitial,
   testimonialInitial,
-  courseInitial,
   curriculumInitial,
   overviewInitial,
   instructorInitial,

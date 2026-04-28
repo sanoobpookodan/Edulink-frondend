@@ -16,6 +16,7 @@ import NavigationProvider from "@/context/NavigationProvider";
 
 const outfit = Outfit({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,13 +34,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${outfit.className} dark:bg-gray-900`}>
         <NavigationProvider>
-          <AuthGuard>
-            <ThemeProvider>
-              <SidebarProvider>
-                <AdminStructure>{children}</AdminStructure>
-              </SidebarProvider>
-            </ThemeProvider>
-          </AuthGuard>
+          {/* <AuthGuard> */}
+          <ThemeProvider>
+            <SidebarProvider>
+              <AdminStructure>{children}</AdminStructure>
+            </SidebarProvider>
+          </ThemeProvider>
+          {/* </AuthGuard> */}
         </NavigationProvider>
       </body>
     </html>

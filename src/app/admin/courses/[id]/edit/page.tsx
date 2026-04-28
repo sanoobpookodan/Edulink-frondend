@@ -1,9 +1,9 @@
-import CourseCreateView from "@/modules/admin/courses/components/CourseCreateView";
+import CourseEditView from "@/modules/admin/courses/components/CourseEditView";
 
 export const metadata = {
-  title: "Create Course",
+  title: "Edit Course",
 };
 
-export default function CourseCreatePage() {
-  return <CourseCreateView />;
+export default function CourseEditPage() {
+  return <CourseEditView />;
 }

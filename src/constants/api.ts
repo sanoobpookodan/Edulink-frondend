@@ -16,11 +16,25 @@ export const API_ENDPOINTS = {
   },
   courses: {
     list: "/courses",
-    detail: (id: string) => `/courses/${id}`,
-    enroll: (id: string) => `/courses/${id}/enroll`,
     create: "/courses",
     update: (id: string) => `/courses/${id}`,
     delete: (id: string) => `/courses/${id}`,
+    detail: (id: string) => `/courses/${id}`,
+    enroll: (id: string) => `/courses/${id}/enroll`,
+  },
+  course_categories: {
+    list: "/course-categories",
+    create: "/course-categories",
+    update: (id: string) => `/course-categories/${id}`,
+    delete: (id: string) => `/course-categories/${id}`,
+    detail: (id: string) => `/course-categories/${id}`,
+  },
+  instructors: {
+    list: "/instructors",
+    create: "/instructors",
+    update: (id: string) => `/instructors/${id}`,
+    delete: (id: string) => `/instructors/${id}`,
+    detail: (id: string) => `/instructors/${id}`,
   },
   lessons: {
     list: (courseId: string) => `/courses/${courseId}/lessons`,

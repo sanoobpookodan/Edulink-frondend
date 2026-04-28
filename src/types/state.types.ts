@@ -51,12 +51,13 @@ export interface Curriculum {
 }
 
 export interface Course {
+  id: string;
   title: string;
   slug?: string;
   image: string | File;
   content: string;
-  category: string;
-  instructor: string;
+  categoryId: string;
+  instructorId: string;
 }
 
 export type UserRole = "student" | "instructor" | "admin";

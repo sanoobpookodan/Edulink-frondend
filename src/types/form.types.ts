@@ -38,6 +38,7 @@ export interface FormProps<T> {
     isValid: boolean;
     isDirty: boolean;
     setFieldValue: (field: keyof T, value: string) => void;
+    handleChange: (e: FormChangeEvent) => void;
   }) => React.ReactNode;
 }
 

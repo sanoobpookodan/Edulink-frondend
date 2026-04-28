@@ -11,12 +11,14 @@
     "show:files": "tree -L 4 src/app -I \"node_modules|.git|dist|public\" | pbcopy"
   },
   "dependencies": {
+    "@next/swc-darwin-arm64": "^16.2.4",
     "@tailwindcss/forms": "^0.5.11",
     "@tiptap/extension-text-style": "^3.19.0",
     "@tiptap/react": "^3.19.0",
     "@tiptap/starter-kit": "^3.19.0",
     "autoprefixer": "^10.4.24",
     "axios": "^1.13.6",
+    "dotenv": "^17.4.2",
     "flatpickr": "^4.6.13",
     "next": "16.1.6",
     "react": "19.2.3",

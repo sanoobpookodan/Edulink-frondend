@@ -4,11 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function AuthLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative p-6 bg-white z-1 dark:bg-gray-900 sm:p-0">
       <div className="relative flex flex-col justify-center w-full h-screen lg:flex-row dark:bg-gray-900 sm:p-0">
@@ -25,6 +21,7 @@ export default function AuthLayout({
                     alt="Logo"
                     width={231}
                     height={48}
+                    className="h-auto"
                   />
                 </>
               </Link>

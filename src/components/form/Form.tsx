@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { imageTypes } from "@/constants";
 import { FormChangeEvent, FormErrors, FormProps, FormTouched } from "@/types";
 
@@ -12,7 +12,11 @@ function Form<T extends Record<string, any>>({
   const [form, setForm] = useState<T>(initialData);
   const [errors, setErrors] = useState<FormErrors<T>>({});
   const [touched, setTouched] = useState<FormTouched<T>>({});
+  const fieldCache = useRef(new Map());
 
+  useEffect(() => {
+    setForm(initialData);
+  }, [initialData]);
   // ── Validate full form ─────────────────────────────
   const validateForm = () => {
     if (!schema) return true;
@@ -87,10 +91,15 @@ function Form<T extends Record<string, any>>({
   };
 
   // ── Blur handler ───────────────────────────────────
-  const handleBlur = (name: keyof T) => () => {
-    setTouched((prev) => ({ ...prev, [name]: true }));
-    validateField(name, form[name]);
-  };
+  const handleBlur = useCallback(
+    (name: keyof T) => {
+      return () => {
+        setTouched((prev) => ({ ...prev, [name]: true }));
+        validateField(name, form[name]);
+      };
+    },
+    [form, validateField],
+  );
 
   // ── Submit ─────────────────────────────────────────
   const handleSubmit = () => {
@@ -109,13 +118,21 @@ function Form<T extends Record<string, any>>({
   };
 
   // ── Helpers ────────────────────────────────────────
-  const field = (name: Extract<keyof T, string>) => ({
-    name: name,
-    value: form[name],
-    onChange: handleChange,
-    onBlur: handleBlur(name),
-    error: touched[name] ? errors[name] : undefined,
-  });
+  const field = useCallback(
+    (name: Extract<keyof T, string>) => {
+      return {
+        name,
+        value: form[name],
+        onChange: handleChange,
+        onBlur: () => {
+          setTouched((prev) => ({ ...prev, [name]: true }));
+          validateField(name, form[name]);
+        },
+        error: touched[name] ? errors[name] : undefined,
+      };
+    },
+    [form, errors, touched, handleChange],
+  );
 
   const isValid = useMemo(() => (schema ? schema.safeParse(form).success : true), [form, schema]);
 
@@ -151,6 +168,7 @@ function Form<T extends Record<string, any>>({
         isValid,
         isDirty,
         setFieldValue,
+        handleChange,
       })}
     </form>
   );

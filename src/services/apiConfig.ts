@@ -14,9 +14,6 @@ import type {
 export const api = axios.create({
   baseURL: API_URL,
   timeout: API_TIMEOUT,
-  headers: {
-    "Content-Type": "application/json",
-  },
 });
 
 // Request Interceptor for Auth Header

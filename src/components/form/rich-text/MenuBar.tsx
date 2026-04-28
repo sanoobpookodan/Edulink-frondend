@@ -24,6 +24,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
   return (
     <div className="flex flex-wrap gap-2 border-b border-gray-200 dark:border-gray-700 pb-3 mb-4">
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editorState.canBold}
         className={`${baseBtn} ${editorState.isBold ? active : inactive}`}
@@ -32,6 +33,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editorState.canItalic}
         className={`${baseBtn} ${editorState.isItalic ? active : inactive}`}
@@ -40,6 +42,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleStrike().run()}
         disabled={!editorState.canStrike}
         className={`${baseBtn} ${editorState.isStrike ? active : inactive}`}
@@ -48,6 +51,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleCode().run()}
         disabled={!editorState.canCode}
         className={`${baseBtn} ${editorState.isCode ? active : inactive}`}
@@ -56,6 +60,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().unsetAllMarks().run()}
         className={`${baseBtn} ${inactive}`}
       >
@@ -63,6 +68,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().clearNodes().run()}
         className={`${baseBtn} ${inactive}`}
       >
@@ -70,6 +76,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().setParagraph().run()}
         className={`${baseBtn} ${editorState.isParagraph ? active : inactive}`}
       >
@@ -78,12 +85,11 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
 
       {headingLevels.map((level) => (
         <button
+          type="button"
           key={level}
           onClick={() => editor.chain().focus().toggleHeading({ level }).run()}
           className={`${baseBtn} ${
-            editorState[`isHeading${level}` as keyof typeof editorState]
-              ? active
-              : inactive
+            editorState[`isHeading${level}` as keyof typeof editorState] ? active : inactive
           }`}
         >
           H{level}
@@ -91,6 +97,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       ))}
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleBulletList().run()}
         className={`${baseBtn} ${editorState.isBulletList ? active : inactive}`}
       >
@@ -98,6 +105,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleOrderedList().run()}
         className={`${baseBtn} ${editorState.isOrderedList ? active : inactive}`}
       >
@@ -105,6 +113,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleCodeBlock().run()}
         className={`${baseBtn} ${editorState.isCodeBlock ? active : inactive}`}
       >
@@ -112,6 +121,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().toggleBlockquote().run()}
         className={`${baseBtn} ${editorState.isBlockquote ? active : inactive}`}
       >
@@ -119,6 +129,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().setHorizontalRule().run()}
         className={`${baseBtn} ${inactive}`}
       >
@@ -126,6 +137,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().setHardBreak().run()}
         className={`${baseBtn} ${inactive}`}
       >
@@ -133,6 +145,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().undo().run()}
         disabled={!editorState.canUndo}
         className={`${baseBtn} ${inactive}`}
@@ -141,6 +154,7 @@ export const MenuBar = ({ editor }: { editor: Editor | null }) => {
       </button>
 
       <button
+        type="button"
         onClick={() => editor.chain().focus().redo().run()}
         disabled={!editorState.canRedo}
         className={`${baseBtn} ${inactive}`}

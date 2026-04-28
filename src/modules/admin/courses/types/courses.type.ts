@@ -1,20 +1,21 @@
-import { PaginationMeta } from "@/types/common.types";
+import { PaginationProps } from "@/types/common.types";
 
 export interface Course {
-  id: string;
+  id?: string;
   title: string;
   slug: string;
-  description: string;
   content: string;
-  duration: string;
   image: string;
   status: string;
-  category: string;
-  instructor: string;
-  curriculum: CurriculumModule[];
-  overview: OverviewPoint[];
-  createdAt: string;
-  updatedAt: string;
+  category?: string;
+  categoryId: string;
+  instructor?: string;
+  duration?: string;
+  instructorId: string;
+  curriculum?: CurriculumModule[];
+  overview?: OverviewPoint[];
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface Lesson {
@@ -34,9 +35,6 @@ export interface OverviewPoint {
   title: string;
 }
 
-export interface CourseTableProps {
+export interface CourseTableProps extends PaginationProps {
   data: Course[];
-  meta?: PaginationMeta;
-  onPageChange?: (page: number) => void;
-  onLimitChange?: (limit: number) => void;
 }

@@ -4,3 +4,9 @@ export interface PaginationMeta {
   total: number;
   totalPages: number;
 }
+
+export interface PaginationProps {
+  meta?: PaginationMeta;
+  onPageChange?: (page: number) => void;
+  onLimitChange?: (limit: number) => void;
+}

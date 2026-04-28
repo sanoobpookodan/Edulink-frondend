@@ -30,7 +30,6 @@ const FileInput: FC<FileInputProps> = ({
 }) => {
   const [preview, setPreview] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
-  console.log(error);
 
   useEffect(() => {
     if (!file) return;
@@ -97,4 +96,4 @@ const FileInput: FC<FileInputProps> = ({
   );
 };
 
-export default FileInput;
+export default React.memo(FileInput);
