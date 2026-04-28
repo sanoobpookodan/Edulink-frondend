@@ -47,6 +47,8 @@ export const get = async <T>(url: string, params?: object): Promise<ApiGetResult
       message: response.data.message ?? "Some error with 200 status code",
     };
   } catch (error) {
+    console.log(error);
+
     if (axios.isAxiosError(error)) {
       return {
         status: false,

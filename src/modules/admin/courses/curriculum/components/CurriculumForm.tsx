@@ -1,22 +1,9 @@
 "use client";
 import ComponentCard from "@/components/common/ComponentCard";
 import Label from "@/components/form/Label";
-import Select from "@/components/form/Select";
-import TextArea from "@/components/form/input/TextArea";
 import Button from "@/components/ui/button/Button";
-import {
-  BLOG_STATUS_OPTIONS,
-  courseInitial,
-  curriculumInitial,
-  overviewInitial,
-  STATUS_OPTIONS,
-} from "@/constants";
+import { curriculumInitial, overviewInitial } from "@/constants";
 import Input from "@/components/form/input/InputField";
-import FileInput from "@/components/form/input/FileInput";
-import RichTextEditor from "@/components/form/input/RichTextEditor";
-import Form from "@/components/form/Form";
-import { ChevronDownIcon } from "@/icons";
-import MultiSelect from "@/components/form/MultiSelect";
 import { BaseFormProps, Curriculum, Lesson } from "@/types";
 import { useFieldArray } from "@/hooks/useFieldArray";
 
@@ -29,10 +16,8 @@ export default function CurriculumForm({
   initialData = { curriculum: curriculumInitial, overview: overviewInitial },
 }: BaseFormProps<CurriculumFormProps>) {
   let title = mode === "create" ? "Create Curriculum" : "Edit Curriculum";
-  let curriculum_title =
-    mode === "create" ? "Create Chapters" : "Edit Chapters";
-  let overview_title =
-    mode === "create" ? "Create Overviews" : "Edit Overviews";
+  let curriculum_title = mode === "create" ? "Create Chapters" : "Edit Chapters";
+  let overview_title = mode === "create" ? "Create Overviews" : "Edit Overviews";
 
   const curriculum = useFieldArray<Curriculum>(initialData.curriculum);
   const overview = useFieldArray<string>(initialData.overview);
@@ -89,9 +74,7 @@ export default function CurriculumForm({
 
   // overview crud functions
   const updateOverview = (index: number, value: string) => {
-    const updated = overview.items.map((item, i) =>
-      i === index ? value : item,
-    );
+    const updated = overview.items.map((item, i) => (i === index ? value : item));
     overview.setItems(updated);
   };
 
@@ -120,16 +103,11 @@ export default function CurriculumForm({
                   />
                 </div>
                 <div className="xl:col-span-1 items-end">
-                  <Button onClick={() => curriculum.remove(sectionIndex)}>
-                    Remove
-                  </Button>
+                  <Button onClick={() => curriculum.remove(sectionIndex)}>Remove</Button>
                 </div>
               </div>
               {section.lessons.map((lesson, lessonIndex) => (
-                <div
-                  className="grid grid-cols-3    gap-2 ps-5"
-                  key={lessonIndex}
-                >
+                <div className="grid grid-cols-3    gap-2 ps-5" key={lessonIndex}>
                   <div className="xl:col-span-1 ">
                     <div>
                       <Label>Lesson -{lessonIndex + 1} Title</Label>
@@ -137,12 +115,7 @@ export default function CurriculumForm({
                         placeholder="Enter lesson title"
                         value={lesson.title}
                         onChange={(e) =>
-                          updateLesson(
-                            sectionIndex,
-                            lessonIndex,
-                            "title",
-                            e.target.value,
-                          )
+                          updateLesson(sectionIndex, lessonIndex, "title", e.target.value)
                         }
                       />
                     </div>
@@ -154,12 +127,7 @@ export default function CurriculumForm({
                         placeholder="Enter lesson video URL"
                         value={lesson.video_url}
                         onChange={(e) =>
-                          updateLesson(
-                            sectionIndex,
-                            lessonIndex,
-                            "video_url",
-                            e.target.value,
-                          )
+                          updateLesson(sectionIndex, lessonIndex, "video_url", e.target.value)
                         }
                       />
                     </div>
@@ -171,20 +139,11 @@ export default function CurriculumForm({
                         placeholder="Enter lesson duration"
                         value={lesson.duration}
                         onChange={(e) =>
-                          updateLesson(
-                            sectionIndex,
-                            lessonIndex,
-                            "duration",
-                            e.target.value,
-                          )
+                          updateLesson(sectionIndex, lessonIndex, "duration", e.target.value)
                         }
                       />
                     </div>
-                    <Button
-                      onClick={() => removeLesson(sectionIndex, lessonIndex)}
-                    >
-                      -
-                    </Button>
+                    <Button onClick={() => removeLesson(sectionIndex, lessonIndex)}>-</Button>
                   </div>
                 </div>
               ))}
@@ -194,9 +153,7 @@ export default function CurriculumForm({
             </div>
           ))}
           <div className="flex items-end  justify-start">
-            <Button onClick={() => curriculum.add(curriculumInitial[0])}>
-              Add Chapter
-            </Button>
+            <Button onClick={() => curriculum.add(curriculumInitial[0])}>Add Chapter</Button>
           </div>
         </ComponentCard>
         <ComponentCard title={overview_title}>
@@ -218,15 +175,11 @@ export default function CurriculumForm({
             </div>
           ))}
           <div className="flex items-end  justify-start">
-            <Button onClick={() => overview.add(overviewInitial[0])}>
-              Add Overview
-            </Button>
+            <Button onClick={() => overview.add(overviewInitial[0])}>Add Overview</Button>
           </div>
         </ComponentCard>
         <div className="flex items-center gap-5">
-          <Button>
-            {mode === "create" ? "Create Curriculum" : "Update Curriculum"}
-          </Button>
+          <Button>{mode === "create" ? "Create Curriculum" : "Update Curriculum"}</Button>
         </div>
       </ComponentCard>
     </div>
