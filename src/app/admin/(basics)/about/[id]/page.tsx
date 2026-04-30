@@ -1,10 +1,12 @@
 export const metadata = {
   title: "About Details",
 };
-interface ViewAboutProps {
-  params: { id: string };
-}
+type ViewAboutProps = {
+  params: Promise<{ id: string }>;
+};
 
-export default function ViewAbout({ params }: ViewAboutProps) {
-  return <div>View About item with ID: {params.id}</div>;
+export default async function ViewAbout({ params }: ViewAboutProps) {
+  const { id } = await params;
+
+  return <div>View About item with ID: {id}</div>;
 }

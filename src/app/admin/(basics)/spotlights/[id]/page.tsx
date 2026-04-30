@@ -1,10 +1,12 @@
 export const metadata = {
   title: "Spotlight Details",
 };
-interface ViewSpotlightProps {
-  params: { id: string };
-}
+type SpotlightPageProps = {
+  params: Promise<{ id: string }>;
+};
 
-export default function ViewSpotlight({ params }: ViewSpotlightProps) {
-  return <div>View Spotlight with ID: {params.id}</div>;
+export default async function ViewSpotlight({ params }: SpotlightPageProps) {
+  const { id } = await params;
+
+  return <div>View Spotlight with ID: {id}</div>;
 }

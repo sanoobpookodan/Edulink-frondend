@@ -2,9 +2,10 @@ export const metadata = {
   title: "Testimonial Details",
 };
 interface ViewTestimonialProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ViewTestimonial({ params }: ViewTestimonialProps) {
-  return <div>View testimonial with ID: {params.id}</div>;
+export default async function ViewTestimonial({ params }: ViewTestimonialProps) {
+  const { id } = await params;
+  return <div>View testimonial with ID: {id}</div>;
 }

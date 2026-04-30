@@ -5,11 +5,16 @@ export const toSlug = (text: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-export const isRichTextEmpty = (html: string) => {
-  const doc = new DOMParser().parseFromString(html, "text/html");
-  const text = doc.body.textContent?.trim() || "";
-  return text.length === 0;
-};
+export function isRichTextEmpty(html: string) {
+  if (typeof window === "undefined") {
+    // Server fallback: basic check
+    return !html || html.trim() === "" || html === "<p><br></p>";
+  }
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+  return doc.body.textContent?.trim() === "";
+}
 
 export const generateListData = <T extends Record<string, any>>(
   data: T[],

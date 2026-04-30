@@ -2,9 +2,10 @@ export const metadata = {
   title: "Teacher Details",
 };
 interface ViewTeacherProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ViewTeacher({ params }: ViewTeacherProps) {
-  return <div>View teacher with ID: {params.id}</div>;
+export default async function ViewTeacher({ params }: ViewTeacherProps) {
+  const { id } = await params;
+  return <div>View teacher with ID: {id}</div>;
 }

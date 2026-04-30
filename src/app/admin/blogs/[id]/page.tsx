@@ -2,9 +2,10 @@ export const metadata = {
   title: "Blog Details",
 };
 interface ViewBlogProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function ViewBlog({ params }: ViewBlogProps) {
-  return <div>View blog with ID: {params.id}</div>;
+export default async function ViewBlog({ params }: ViewBlogProps) {
+  const { id } = await params;
+  return <div>View blog with ID: {id}</div>;
 }
